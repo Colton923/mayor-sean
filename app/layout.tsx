@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 
 const NunitoSans = Nunito_Sans({
   display: "swap",
+  subsets: ["latin"],
 });
 
 export default function RootLayout({
