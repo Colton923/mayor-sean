@@ -18,7 +18,7 @@ module.exports = {
       keyframes: {
         "blur-in": {
           "0%": { filter: "blur(6px)" },
-          "100%": { filter: "blur(1px)" },
+          "100%": { filter: "blur(0px)" },
         },
       },
       animation: {

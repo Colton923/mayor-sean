@@ -1,5 +1,5 @@
 type ButtonProps = {
-  variant: "primary" | "ghost";
+  variant: "primary" | "ghost" | "white";
   size: "sm" | "md" | "lg" | "icon";
   children: React.ReactNode;
 };
@@ -7,10 +7,12 @@ type ButtonProps = {
 const Button = ({ variant, size, children }: ButtonProps) => {
   return (
     <button
-      className={`px-4 py-2 rounded-md hover:shadow-md transition-all
+      className={`px-2 hover:shadow-md transition-all
       ${
         variant === "primary"
           ? "bg-primary text-white"
+          : variant === "white"
+          ? "bg-white text-primary"
           : "bg-transparent text-primary"
       } ${
         size === "sm"
@@ -20,7 +22,7 @@ const Button = ({ variant, size, children }: ButtonProps) => {
           : size === "lg"
           ? "text-lg"
           : "text-sm"
-      } ${variant === "ghost" ? "border border-primary" : ""}`}
+      } ${"border border-primary"}`}
     >
       {children}
     </button>

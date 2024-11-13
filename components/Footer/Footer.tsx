@@ -34,7 +34,6 @@ const Footer = ({
                 href={icon.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
               >
                 <Button variant="ghost" size="icon">
                   {icon.SocialMediaIcon}

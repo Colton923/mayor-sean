@@ -1,0 +1,117 @@
+.markdown h1 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+.markdown h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  margin-top: 2.25rem;
+  margin-bottom: 1rem;
+}
+.markdown h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.markdown h4 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-top: 1.75rem;
+  margin-bottom: 1rem;
+}
+.markdown h5 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-top: 1.75rem;
+  margin-bottom: 1rem;
+}
+.markdown h6 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+.markdown p {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.markdown ul {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.markdown ol {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.markdown li {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.markdown blockquote {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.markdown table {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.markdown thead {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.markdown tbody {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.markdown tr {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.markdown th {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.markdown td {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.markdown a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+.markdown a:hover {
+  text-decoration: none;
+}
+.markdown strong {
+  font-weight: 600;
+}
+.markdown em {
+  font-style: italic;
+}
+.markdown img {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.markdown hr {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.markdown code {
+  padding: 0.125rem 0.25rem;
+  background-color: #f5f7ff;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+}
+.markdown pre {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.markdown pre code {
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
+  font-size: 1rem;
+}

@@ -74,7 +74,7 @@ export default function RootLayout({
             { url: "/contact", label: "Contact" },
           ]}
         />
-        {children}
+        <div className="transform translate-y-16">{children}</div>
         <Footer
           FooterIcon={<img src={img.src} alt="logo" className="w-30 h-16" />}
           socialMediaIcons={socialMediaIcons}
