@@ -24,36 +24,36 @@ export default function Page() {
   const LandingPageHTML = marked(LandingPageMarkdown);
 
   return (
-    <div className="flex flex-col">
-      <div className="flex flex-col">
-        <div className="h-96">
-          <img
-            src={HeroPhoto.src}
-            alt="Sean for Mayor"
-            className="object-cover w-full h-full brightness-75"
-          />
-        </div>
-        <div className="flex flex-row justify-center items-center w-full bg-black bg-opacity-50 transform -translate-y-96 flex-wrap mx-auto h-0">
-          <div className="flex flex-col px-4 ml-8 py-8 text-center animate-blur-in">
-            <h1 className="text-6xl text-blue font-extrabold text-decoration underline [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_]">
-              Sean Cavanaugh
-            </h1>
-            <h2 className="underline text-3xl text-red [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_] pt-4">
-              Working for{" "}
-              <span className="text-blue font-bold text-4xl [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_,_-1px_-1px_.5rem_white_,_-1px_1px_.5rem_white_]">
-                you.
-              </span>
-            </h2>
-            <h2 className="underline text-3xl text-red [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_] pb-1">
-              Working for{" "}
-              <span className="text-blue font-bold text-4xl [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_,_-1px_-1px_.5rem_white_,_-1px_1px_.5rem_white_]">
-                change.
-              </span>
-            </h2>
-          </div>
-          {/* only visible if screen is > 768px */}
-          <div className="hidden lg:flex flex-col px-4 py-8 text-center">
-            <ContactForm c="white" />
+    <div className="min-h:screen ">
+      <img
+        src={HeroPhoto.src}
+        alt="Sean for Mayor"
+        className="h-screen w-full object-cover object-[80%]"
+      />
+      <div className="flex flex-row justify-center items-center w-full bg-black bg-opacity-50 flex-wrap mx-auto">
+        <div id="overlay" className="absolute h-full bg-black bg-opacity-50 ">
+          <div className="flex flex-row justify-between items-center w-full bg-black bg-opacity-50 flex-wrap mx-auto">
+            <div className="flex flex-col px-4 ml-8 py-8 text-center animate-blur-in">
+              <h1 className="text-6xl text-blue font-extrabold text-decoration underline [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_]">
+                Sean Cavanaugh
+              </h1>
+              <h2 className="underline text-3xl text-red [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_] pt-4">
+                Working for{" "}
+                <span className="text-blue font-bold text-4xl [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_,_-1px_-1px_.5rem_white_,_-1px_1px_.5rem_white_]">
+                  you.
+                </span>
+              </h2>
+              <h2 className="underline text-3xl text-red [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_] pb-1">
+                Working for{" "}
+                <span className="text-blue font-bold text-4xl [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_,_-1px_-1px_.5rem_white_,_-1px_1px_.5rem_white_]">
+                  change.
+                </span>
+              </h2>
+            </div>
+            {/* only visible if screen is > 768px */}
+            <div className="hidden lg:flex flex-col px-4 py-8 text-center">
+              <ContactForm c="black" />
+            </div>
           </div>
         </div>
       </div>

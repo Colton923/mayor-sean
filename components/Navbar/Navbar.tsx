@@ -37,20 +37,21 @@ const Navbar = ({ NavbarIcon, NavbarLinks }: TNavbar) => {
   const FadingLink = Intersection(MyLinkComponent);
 
   return (
-    <nav className="shadow-md z-10 w-full fixed top-0 left-0 right-0 bg-white">
+    <nav className="shadow-md z-10 w-full fixed top-0 left-0 right-0 bg-white bg-opacity-10 backdrop-blur-sm">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center">
               {NavbarIcon}
             </Link>
           </div>
           <div className="hidden sm:ml-6 sm:flex sm:items-center">
+            <div className="h-24 bg-light-blue mx-1 w-px"></div>
             {NavbarLinks.map((link, index) => (
               <Link
                 key={index}
                 href={link.url}
-                className="ml-8 text-gray-700 hover:text-gray-900"
+                className="ml-8 text-gray-700 hover:text-gray-900 text-xl font-extrabold uppercase tracking-wider cursor-pointer transition-all duration-300 ease-in-out transform hover:underline hover:text-red [text-shadow:_1_1_3px_white]"
               >
                 {link.label}
               </Link>

@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 import { Nunito_Sans } from "next/font/google";
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
-import logo from "@/public/assets/logo-64-64.png";
+import logo from "@/public/assets/logo-no-bg-512x512.png";
 import img from "@/public/assets/sean-marching-597x271.png";
 import type { TSocialMediaIcon } from "types/TSocialMediaIcon";
 import type { Metadata } from "next";
@@ -56,14 +56,32 @@ export default function RootLayout({
     },
   ];
 
-  const NavbarIcon = <img src={logo.src} alt="logo" className="w-30 h-16" />;
+  const NavbarIcon = <img src={logo.src} alt="logo" className="w-56 h-36" />;
 
   return (
     <html lang="en">
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/general/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/general/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/general/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest"></link>
+        <title>Sean Cavanaugh for Mayor</title>
       </head>
       <body style={NunitoSans.style}>
         <Navbar
@@ -74,7 +92,7 @@ export default function RootLayout({
             { url: "/contact", label: "Contact" },
           ]}
         />
-        <div className="transform translate-y-16">{children}</div>
+        {children}
         <Footer
           FooterIcon={<img src={img.src} alt="logo" className="w-30 h-16" />}
           socialMediaIcons={socialMediaIcons}
