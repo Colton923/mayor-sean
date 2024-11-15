@@ -1,119 +1,68 @@
 "use client";
-
-import { useState } from "react";
-import Link from "next/link";
-import Intersection from "../ui/Intersection/Intersection";
+import { useState, useEffect } from "react";
+import Desktop from "./Desktop";
+import Mobile from "./Mobile";
 
 type TNavbar = {
-  NavbarIcon: React.ReactNode;
+  MobileIcon: React.ReactNode;
+  DesktopIcon: React.ReactNode;
   NavbarLinks: { url: string; label: string }[];
 };
 
-const Navbar = ({ NavbarIcon, NavbarLinks }: TNavbar) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const Navbar = ({ DesktopIcon, MobileIcon, NavbarLinks }: TNavbar) => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [bottomedOut, setIsBottomedOut] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  useEffect(() => {
+    const handleBottomedOut = () => {
+      if (window.scrollY + window.innerHeight >= document.body.clientHeight) {
+        setIsBottomedOut(true);
+      } else {
+        setIsBottomedOut(false);
+      }
+    };
 
-  const MyLinkComponent = ({
-    href,
-    label,
-    onClick,
-  }: {
-    href: string;
-    label: string;
-    onClick: () => void;
-  }) => (
-    <Link
-      href={href}
-      className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 active:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100"
-      onClick={onClick}
-    >
-      {label}
-    </Link>
-  );
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
 
-  const FadingLink = Intersection(MyLinkComponent);
+    const handler = () => {
+      handleScroll();
+      handleBottomedOut();
+    };
+
+    window.addEventListener("scroll", handler);
+    return () => {
+      window.removeEventListener("scroll", handler);
+    };
+  }, []);
 
   return (
-    <nav className="shadow-md z-10 w-full fixed top-0 left-0 right-0 bg-white bg-opacity-10 backdrop-blur-sm">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex">
-          <div className="flex items-center">
-            <Link href="/" className="flex-shrink-0 flex items-center">
-              {NavbarIcon}
-            </Link>
-          </div>
-          <div className="hidden sm:ml-6 sm:flex sm:items-center">
-            <div className="h-24 bg-light-blue mx-1 w-px"></div>
-            {NavbarLinks.map((link, index) => (
-              <Link
-                key={index}
-                href={link.url}
-                className="ml-8 text-gray-700 hover:text-gray-900 text-xl font-extrabold uppercase tracking-wider cursor-pointer transition-all duration-300 ease-in-out transform hover:underline hover:text-red [text-shadow:_1_1_3px_white]"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-          <div className="flex items-center sm:hidden">
-            <button
-              onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
-              aria-expanded={isMenuOpen}
-            >
-              <span className="sr-only">Toggle main menu</span>
-              {isMenuOpen ? (
-                <svg
-                  className="block h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="block h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              )}
-            </button>
-          </div>
-        </div>
+    <nav
+      className={`shadow-md w-full ${
+        isScrolled ? "bg-white bg-opacity-100" : ""
+      } transition-colors duration-300`}
+    >
+      <div className="hidden z-10 md:block fixed top-0 left-0 right-0">
+        <Desktop NavbarLinks={NavbarLinks} DesktopIcon={DesktopIcon} />
       </div>
-
-      {isMenuOpen && (
-        <div className="sm:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            {NavbarLinks.map((link, index) => (
-              <FadingLink
-                key={index}
-                href={link.url}
-                label={link.label}
-                onClick={toggleMenu}
-              />
-            ))}
-          </div>
-        </div>
-      )}
+      <div
+        className={`md:hidden z-10 fixed bottom-0 left-0 right-0 transition-transform duration-300 ${
+          bottomedOut
+            ? "transform translate-y-[50vh]"
+            : "flex items-center justify-center"
+        }`}
+      >
+        <Mobile
+          NavbarLinks={NavbarLinks}
+          MobileIcon={MobileIcon}
+          bottomedOut={bottomedOut}
+        />
+      </div>
     </nav>
   );
 };

@@ -56,7 +56,9 @@ export default function RootLayout({
     },
   ];
 
-  const NavbarIcon = <img src={logo.src} alt="logo" className="w-56 h-36" />;
+  // small and large css classes for image resizing on breakpoints
+  const DesktopIcon = <img src={logo.src} alt="logo" className="w-56 h-36" />;
+  const MobileIcon = <img src={logo.src} alt="logo" className="w-36 h-24" />;
 
   return (
     <html lang="en">
@@ -85,11 +87,17 @@ export default function RootLayout({
       </head>
       <body style={NunitoSans.style}>
         <Navbar
-          NavbarIcon={NavbarIcon}
+          DesktopIcon={DesktopIcon}
+          MobileIcon={MobileIcon}
           NavbarLinks={[
             { url: "/", label: "Home" },
-            { url: "/about", label: "About" },
+            { url: "/about", label: "About Sean" },
+            { url: "/issues", label: "Issues" },
+            { url: "/endorsements", label: "Endorsements" },
+            { url: "/donate", label: "Donate" },
             { url: "/contact", label: "Contact" },
+            { url: "/yard-signs", label: "Yard Signs" },
+            { url: "/recpies", label: "Recipes" },
           ]}
         />
         {children}

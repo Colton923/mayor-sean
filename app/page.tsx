@@ -25,15 +25,19 @@ export default function Page() {
 
   return (
     <div className="min-h:screen ">
-      <img
-        src={HeroPhoto.src}
-        alt="Sean for Mayor"
-        className="h-screen w-full object-cover object-[80%]"
-      />
+      <div className="relative">
+        <img
+          src={HeroPhoto.src}
+          alt="Sean for Mayor"
+          className="h-screen w-full object-cover object-[80%]"
+        />
+        <div className="absolute top-0 left-0 w-full h-[20%] bg-gradient-to-b from-white to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-[20%] bg-gradient-to-t from-black to-transparent"></div>
+      </div>
       <div className="flex flex-row justify-center items-center w-full bg-black bg-opacity-50 flex-wrap mx-auto">
         <div id="overlay" className="absolute h-full bg-black bg-opacity-50 ">
           <div className="flex flex-row justify-between items-center w-full bg-black bg-opacity-50 flex-wrap mx-auto">
-            <div className="flex flex-col px-4 ml-8 py-8 text-center animate-blur-in">
+            <div className="flex flex-col px-4 py-8 text-center animate-blur-in">
               <h1 className="text-6xl text-blue font-extrabold text-decoration underline [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_]">
                 Sean Cavanaugh
               </h1>

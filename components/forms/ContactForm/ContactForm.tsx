@@ -88,6 +88,9 @@ const ContactForm = ({ c }: { c: "white" | "black" }) => {
         onSubmit={handleSubmit(onSubmit)}
         className={`space-y-1 block ${styles["fixed-form"]} p-4 shadow-xl bg-opacity-20 bg-light-blue`}
       >
+        <div className="text-center">
+          <h1 className="text-2xl text-red underline">Get Campaign Updates</h1>
+        </div>
         <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4">
           {/* Name Field */}
           <div className="space-y-2">
@@ -197,9 +200,7 @@ const ContactForm = ({ c }: { c: "white" | "black" }) => {
           {/* Submit Button */}
           <input
             type="submit"
-            className="btn btn-primary w-full md:w-auto
-            bg-red text-white font-bold py-2 px-4 rounded-md
-            "
+            className="btn btn-primary w-full md:w-auto cursor-pointer bg-red text-white font-bold py-2 px-4 rounded-md hover:bg-red-600 transition-all duration-300 ease-in-out transform hover:scale-105"
             value="Submit"
           />
         </div>
