@@ -24,7 +24,7 @@ export default function Page() {
   const LandingPageHTML = marked(LandingPageMarkdown);
 
   return (
-    <div className="min-h:screen ">
+    <div className="min-h:screen">
       <div className="relative">
         <img
           src={HeroPhoto.src}

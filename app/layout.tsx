@@ -97,7 +97,7 @@ export default function RootLayout({
             { url: "/donate", label: "Donate" },
             { url: "/contact", label: "Contact" },
             { url: "/yard-signs", label: "Yard Signs" },
-            { url: "/recpies", label: "Recipes" },
+            { url: "/recipes", label: "Recipes" },
           ]}
         />
         {children}
