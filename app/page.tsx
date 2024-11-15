@@ -54,7 +54,6 @@ export default function Page() {
                 </span>
               </h2>
             </div>
-            {/* only visible if screen is > 768px */}
             <div className="hidden lg:flex flex-col px-4 py-8 text-center">
               <ContactForm c="black" />
             </div>
@@ -66,7 +65,9 @@ export default function Page() {
           className={styles.markdown}
           dangerouslySetInnerHTML={{ __html: LandingPageHTML }}
         />
-        <img src={landingPageImage.src} alt="Sean for Mayor" />
+        <div className="md:flex flex-col px-4 py-8 text-center">
+          <ContactForm c="black" />
+        </div>
       </div>
     </div>
   );
