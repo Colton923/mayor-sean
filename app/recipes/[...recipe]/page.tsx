@@ -10,12 +10,13 @@ const RECIPE_QUERY = (slug: string) => {
 const options = { next: { revalidate: 30 } };
 
 type RecipePageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
-
 export default async function RecipePage({ params }: RecipePageProps) {
+  const slug = (await params).slug;
+
   const recipe = await client.fetch<SanityDocument<TRecipe>>(
-    RECIPE_QUERY(params.slug),
+    RECIPE_QUERY(await slug),
     {},
     options
   );
