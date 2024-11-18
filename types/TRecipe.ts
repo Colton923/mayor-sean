@@ -1,7 +1,7 @@
 interface Ingredient {
   name: string;
   quantity: string;
-  notes: string;
+  additionalInfo: string;
 }
 
 interface TRecipe {
@@ -11,6 +11,7 @@ interface TRecipe {
   preparationSteps: string[];
   additionalNotes: string[];
   servings: string;
+  images: string[];
 }
 
 export default TRecipe;

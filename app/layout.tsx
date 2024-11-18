@@ -59,7 +59,7 @@ export default function RootLayout({
 
   // small and large css classes for image resizing on breakpoints
   const DesktopIcon = <img src={logo.src} alt="logo" className="w-36 h-24" />;
-  const MobileIcon = <img src={logo.src} alt="logo" className="w-24 h-18" />;
+  const MobileIcon = <img src={logo.src} alt="logo" className="w-18 h-12" />;
 
   return (
     <html lang="en">
@@ -101,7 +101,7 @@ export default function RootLayout({
             { url: "/recipes", label: "Recipes" },
           ]}
         />
-        <div style={{ marginTop: NAVBAR_HEIGHT }} />
+        {/* <div style={{ marginTop: NAVBAR_HEIGHT }} /> */}
         {children}
         <Footer
           FooterIcon={<img src={img.src} alt="logo" className="w-30 h-16" />}

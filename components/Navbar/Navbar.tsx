@@ -12,7 +12,6 @@ type TNavbar = {
 const Navbar = ({ DesktopIcon, MobileIcon, NavbarLinks }: TNavbar) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [bottomedOut, setIsBottomedOut] = useState(false);
-
   useEffect(() => {
     const handleBottomedOut = () => {
       if (window.scrollY + window.innerHeight >= document.body.clientHeight) {
@@ -42,7 +41,7 @@ const Navbar = ({ DesktopIcon, MobileIcon, NavbarLinks }: TNavbar) => {
   }, []);
 
   return (
-    <nav>
+    <nav className="flex min-h-[100px]">
       <div className="hidden z-10 md:block fixed top-0 left-0 right-0">
         <div
           className={`shadow-md w-full ${

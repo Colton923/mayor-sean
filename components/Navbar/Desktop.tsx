@@ -8,7 +8,7 @@ type TDesktop = {
 
 const Desktop = ({ DesktopIcon, NavbarLinks }: TDesktop) => {
   return (
-    <>
+    <div className="">
       <div className="flex items-center justify-between">
         <Link
           href="/"
@@ -29,7 +29,7 @@ const Desktop = ({ DesktopIcon, NavbarLinks }: TDesktop) => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

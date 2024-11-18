@@ -6,7 +6,6 @@ import { CardTitle } from "@/components/ui/CardTitle/CardTitle";
 import TRecipe from "@/types/TRecipe";
 import { type SanityDocument } from "next-sanity";
 import { client } from "@/sanity/client";
-import { NAVBAR_HEIGHT } from "@/components/Navbar/Dropdown";
 
 interface RecipesPageProps {
   recipes: TRecipe[];
@@ -41,6 +40,9 @@ export default async function IndexPage() {
     {},
     options
   );
+
+  console.log("recipes: ", recipes);
+
   if (!recipes || recipes.length === 0) {
     return (
       <Card className="w-full max-w-3xl mx-auto">
@@ -57,10 +59,7 @@ export default async function IndexPage() {
   }
 
   return (
-    <div
-      className="w-full max-w-3xl mx-auto"
-      style={{ marginTop: NAVBAR_HEIGHT }}
-    >
+    <div className="w-full max-w-3xl mx-auto p-4">
       {recipes.map((recipe) => (
         <Card key={recipe.title} className="w-full max-w-3xl mx-auto">
           <CardHeader>
@@ -74,7 +73,6 @@ export default async function IndexPage() {
               href={`/recipes/${recipe.title
                 .toLowerCase()
                 .replace(/\s+/g, "-")}`}
-              passHref
             >
               <span className="text-blue underline cursor-pointer hover:opacity-80">
                 View Recipe

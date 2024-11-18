@@ -38,18 +38,18 @@ export default function Page() {
         <div id="overlay" className="absolute h-full bg-black bg-opacity-50 ">
           <div className="flex flex-row justify-between items-center w-full bg-black bg-opacity-50 flex-wrap mx-auto">
             <div className="flex flex-col px-4 py-8 text-center animate-blur-in">
-              <h1 className="text-6xl text-blue font-extrabold text-decoration underline [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_]">
+              <h1 className="uppercase text-5xl text-blue font-extrabold text-decoration [text-shadow:_1px_0px_.5rem_rgba(255,255,255,0.5)_,_1px_-1px_.5rem_rgba(255,255,255,0.5)_]">
                 Sean Cavanaugh
               </h1>
-              <h2 className="underline text-3xl text-red [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_] pt-4">
+              <h2 className="text-3xl text-red [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_] pt-4">
                 Working for{" "}
-                <span className="text-blue font-bold text-4xl [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_,_-1px_-1px_.5rem_white_,_-1px_1px_.5rem_white_]">
+                <span className="underline text-blue font-bold text-4xl [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_,_-1px_-1px_.5rem_white_,_-1px_1px_.5rem_white_]">
                   you.
                 </span>
               </h2>
-              <h2 className="underline text-3xl text-red [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_] pb-1">
+              <h2 className="text-3xl text-red [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_] pb-1">
                 Working for{" "}
-                <span className="text-blue font-bold text-4xl [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_,_-1px_-1px_.5rem_white_,_-1px_1px_.5rem_white_]">
+                <span className="underline text-blue font-bold text-4xl [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_,_-1px_-1px_.5rem_white_,_-1px_1px_.5rem_white_]">
                   change.
                 </span>
               </h2>
@@ -65,7 +65,7 @@ export default function Page() {
           className={styles.markdown}
           dangerouslySetInnerHTML={{ __html: LandingPageHTML }}
         />
-        <div className="md:flex flex-col px-4 py-8 text-center">
+        <div className="md:flex px-4 py-8 text-center w-full justify-center">
           <ContactForm c="black" />
         </div>
       </div>
