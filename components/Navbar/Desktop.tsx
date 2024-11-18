@@ -13,7 +13,7 @@ const Desktop = ({ DesktopIcon, NavbarLinks }: TDesktop) => {
         <Link
           href="/"
           id="Logo image"
-          className="flex items-center py-4 px-2 cursor-pointer min-w-[200px]"
+          className="flex items-center cursor-pointer min-w-[200px]"
         >
           {DesktopIcon}
         </Link>

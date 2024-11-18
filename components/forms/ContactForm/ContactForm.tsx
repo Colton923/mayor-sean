@@ -200,7 +200,7 @@ const ContactForm = ({ c }: { c: "white" | "black" }) => {
           {/* Submit Button */}
           <input
             type="submit"
-            className="btn btn-primary w-full md:w-auto cursor-pointer bg-red text-white font-bold py-2 px-4 rounded-md hover:bg-red-600 transition-all duration-300 ease-in-out transform hover:scale-105"
+            className="btn btn-primary w-full md:w-auto cursor-pointer bg-red text-white font-bold py-2 px-4 hover:bg-red-600 transition-all duration-300 ease-in-out transform hover:scale-105"
             value="Submit"
           />
         </div>

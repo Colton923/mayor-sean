@@ -1,6 +1,6 @@
 interface Ingredient {
   name: string;
-  amount: string;
+  quantity: string;
   notes: string;
 }
 
@@ -8,7 +8,7 @@ interface TRecipe {
   title: string;
   description: string;
   ingredients: Ingredient[];
-  steps: string[];
+  preparationSteps: string[];
   additionalNotes: string[];
   servings: string;
 }

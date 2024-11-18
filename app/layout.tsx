@@ -7,6 +7,7 @@ import logo from "@/public/assets/logo-no-bg-512x512.png";
 import img from "@/public/assets/sean-marching-597x271.png";
 import type { TSocialMediaIcon } from "types/TSocialMediaIcon";
 import type { Metadata } from "next";
+import { NAVBAR_HEIGHT } from "@/components/Navbar/Dropdown";
 
 export const metadata: Metadata = {
   title: "Sean Cavanaugh for Mayor",
@@ -57,8 +58,8 @@ export default function RootLayout({
   ];
 
   // small and large css classes for image resizing on breakpoints
-  const DesktopIcon = <img src={logo.src} alt="logo" className="w-56 h-36" />;
-  const MobileIcon = <img src={logo.src} alt="logo" className="w-36 h-24" />;
+  const DesktopIcon = <img src={logo.src} alt="logo" className="w-36 h-24" />;
+  const MobileIcon = <img src={logo.src} alt="logo" className="w-24 h-18" />;
 
   return (
     <html lang="en">
@@ -100,6 +101,7 @@ export default function RootLayout({
             { url: "/recipes", label: "Recipes" },
           ]}
         />
+        <div style={{ marginTop: NAVBAR_HEIGHT }} />
         {children}
         <Footer
           FooterIcon={<img src={img.src} alt="logo" className="w-30 h-16" />}

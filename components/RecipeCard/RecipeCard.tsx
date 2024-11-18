@@ -39,7 +39,7 @@ export default function RecipeCard({ recipe }: { recipe?: TRecipe }) {
                 className="flex flex-col sm:flex-row sm:items-baseline"
               >
                 <span className="font-medium min-w-[120px]">
-                  {ingredient.amount}
+                  {ingredient.quantity}
                 </span>
                 <span>{ingredient.name}</span>
                 {ingredient.notes && (
@@ -54,7 +54,7 @@ export default function RecipeCard({ recipe }: { recipe?: TRecipe }) {
         <div>
           <h3 className="text-lg font-semibold mb-2">Instructions</h3>
           <ol className="list-decimal list-inside space-y-2">
-            {recipe.steps.map((step, index) => (
+            {recipe.preparationSteps.map((step, index) => (
               <li key={index}>{step}</li>
             ))}
           </ol>
