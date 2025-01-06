@@ -86,7 +86,7 @@ const ContactForm = ({ c }: { c: "white" | "black" }) => {
     return (
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className={`space-y-1 block ${styles["fixed-form"]} p-4 shadow-xl bg-opacity-20 bg-light-blue`}
+        className={`space-y-1 block ${styles["fixed-form"]} p-4 shadow-sm bg-opacity-90 bg-light-blue border border-black`}
       >
         <div className="text-center">
           <h1 className="text-2xl text-red underline">Get Campaign Updates</h1>

@@ -1,5 +1,6 @@
 import ContactForm from "@/components/forms/ContactForm/ContactForm";
-import HeroPhoto from "@/public/assets/sean-marching-597x271.png";
+import HeroPhoto from "@/public/assets/bust-no-bg.png";
+import usa from "@/public/assets/usa.jpg";
 import landingPageImage from "@/public/assets/sean-marching-597x271.png";
 import { marked } from "marked";
 import styles from "@/styles/Markdown.module.css";
@@ -27,9 +28,14 @@ export default function Page() {
     <div className="min-h:screen">
       <div className="relative">
         <img
+          src={usa.src}
+          alt="background image"
+          className="h-screen w-full object-cover object-center"
+        />
+        <img
           src={HeroPhoto.src}
           alt="Sean for Mayor"
-          className="h-screen w-full object-cover object-[80%]"
+          className="h-screen w-full absolute bottom-0 left-0 max-h-[600px] max-w-[400px] object-cover object-center"
         />
         <div className="absolute top-0 left-0 w-full h-[20%] bg-gradient-to-b from-white to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-[20%] bg-gradient-to-t from-black to-transparent"></div>
@@ -60,7 +66,7 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8 shadow-lg bg-white bg-opacity-90 max-w-5xl">
         <div
           className={styles.markdown}
           dangerouslySetInnerHTML={{ __html: LandingPageHTML }}

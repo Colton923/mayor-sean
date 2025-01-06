@@ -2,6 +2,8 @@ import { type SanityDocument } from "next-sanity";
 import { client } from "@/sanity/client";
 import RecipeCard from "@/components/RecipeCard/RecipeCard";
 import TRecipe from "@/types/TRecipe";
+import Link from "next/link";
+import Button from "@/components/ui/Button/Button";
 
 const RECIPE_QUERY = (slug: string) => {
   return `*[_type == "recipe" && title == "${slug}"][0] {
@@ -11,7 +13,8 @@ const RECIPE_QUERY = (slug: string) => {
     additionalNotes,
     servings,
     title,
-    images
+    images,
+    pdf
   }`;
 };
 
@@ -38,10 +41,14 @@ export default async function RecipePage({ params }: RecipePageProps) {
     {},
     options
   );
+  const recipePDFLink = (recipe.pdf.asset.url as string) || null;
 
   return (
     <main className="container mx-auto min-h-screen max-w-3xl p-8 flex flex-col gap-4">
       <RecipeCard recipe={recipe} />
+      <Button size="lg" variant="primary">
+        {recipePDFLink && <Link href={recipePDFLink}>Download PDF</Link>}
+      </Button>
     </main>
   );
 }

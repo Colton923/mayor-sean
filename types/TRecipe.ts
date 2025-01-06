@@ -12,6 +12,11 @@ interface TRecipe {
   additionalNotes: string[];
   servings: string;
   images: string[];
+  pdf: {
+    asset: {
+      url: string;
+    };
+  };
 }
 
 export default TRecipe;

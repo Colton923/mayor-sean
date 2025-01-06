@@ -1,5 +1,5 @@
 import Image from "next/image";
-import aboutimg from "@/public/assets/SeanForMayor-900x900.webp";
+import aboutimg from "@/public/assets/sean-marching-597x271.png";
 
 export default function About() {
   return (
