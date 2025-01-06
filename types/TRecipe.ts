@@ -14,7 +14,8 @@ interface TRecipe {
   images: string[];
   pdf: {
     asset: {
-      url: string;
+      _ref: string;
+      _type: string;
     };
   };
 }
