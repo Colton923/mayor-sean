@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 import Desktop from "./Desktop";
 import Mobile from "./Mobile";
 
-type TNavbar = {
+export type TNavbarLinks = { url: string; label: string; icon?: JSX.Element }[];
+
+export type TNavbar = {
   MobileIcon: React.ReactNode;
   DesktopIcon: React.ReactNode;
-  NavbarLinks: { url: string; label: string }[];
+  NavbarLinks: TNavbarLinks;
 };
 
 const Navbar = ({ DesktopIcon, MobileIcon, NavbarLinks }: TNavbar) => {
@@ -41,7 +43,7 @@ const Navbar = ({ DesktopIcon, MobileIcon, NavbarLinks }: TNavbar) => {
   }, []);
 
   return (
-    <nav className="flex min-h-[100px]">
+    <nav className="flex">
       <div className="hidden z-10 md:block fixed top-0 left-0 right-0">
         <div
           className={`shadow-md w-full ${

@@ -7,8 +7,16 @@ import logo from "@/public/assets/logo-no-bg-512x512.png";
 import img from "@/public/assets/sean-marching-597x271.png";
 import type { TSocialMediaIcon } from "types/TSocialMediaIcon";
 import type { Metadata } from "next";
-import { NAVBAR_HEIGHT } from "@/components/Navbar/Dropdown";
-
+import {
+  IconChecks,
+  IconHeart,
+  IconHome,
+  IconMail,
+  IconMan,
+  IconReceipt,
+  IconRuler,
+  IconSignRight,
+} from "@tabler/icons-react";
 export const metadata: Metadata = {
   title: "Sean Cavanaugh for Mayor",
   description: "Sean Cavanaugh is a candidate for mayor in Monmouth, Illinois.",
@@ -60,7 +68,6 @@ export default function RootLayout({
   // small and large css classes for image resizing on breakpoints
   const DesktopIcon = <img src={logo.src} alt="logo" className="w-36 h-24" />;
   const MobileIcon = <img src={logo.src} alt="logo" className="w-18 h-12" />;
-
   return (
     <html lang="en">
       <head>
@@ -91,17 +98,24 @@ export default function RootLayout({
           DesktopIcon={DesktopIcon}
           MobileIcon={MobileIcon}
           NavbarLinks={[
-            { url: "/", label: "Home" },
-            { url: "/about", label: "About Sean" },
-            { url: "/issues", label: "Issues" },
-            { url: "/endorsements", label: "Endorsements" },
-            { url: "/donate", label: "Donate" },
-            { url: "/contact", label: "Contact" },
-            { url: "/yard-signs", label: "Yard Signs" },
-            { url: "/recipes", label: "Recipes" },
+            { url: "/", label: "Home", icon: <IconHome /> },
+            { url: "/about", label: "About Sean", icon: <IconMan /> },
+            { url: "/issues", label: "Issues", icon: <IconRuler /> },
+            {
+              url: "/endorsements",
+              label: "Endorsements",
+              icon: <IconChecks />,
+            },
+            { url: "/donate", label: "Donate", icon: <IconHeart /> },
+            { url: "/contact", label: "Contact", icon: <IconMail /> },
+            {
+              url: "/yard-signs",
+              label: "Yard Signs",
+              icon: <IconSignRight />,
+            },
+            { url: "/recipes", label: "Recipes", icon: <IconReceipt /> },
           ]}
         />
-        {/* <div style={{ marginTop: NAVBAR_HEIGHT }} /> */}
         {children}
         <Footer
           FooterIcon={<img src={img.src} alt="logo" className="w-30 h-16" />}

@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Dropdown, { NAVBAR_HEIGHT } from "./Dropdown";
 import { usePathname, useRouter } from "next/navigation";
+import { TNavbarLinks } from "./Navbar";
 
 type TMobile = {
   MobileIcon: React.ReactNode;
-  NavbarLinks: { url: string; label: string }[];
+  NavbarLinks: TNavbarLinks;
   bottomedOut: boolean;
 };
 
@@ -32,11 +33,14 @@ const Mobile = ({ MobileIcon, NavbarLinks, bottomedOut }: TMobile) => {
 
   return (
     <div className="relative flex items-center justify-between w-full flex-row">
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-white w-full h-12 z-9 shadow-[0_-10px_50px_rgba(0,0,0,0.2)] flex items-center justify-center"></div>
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-white w-full h-12 z-10 flex items-center justify-center"></div>
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-1/4 bg-white rounded-full w-24 h-24 z-9 shadow-[0_-10px_50px_rgba(0,0,0,0.2)] flex items-center justify-center"></div>
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-1/4 bg-white rounded-full w-24 h-24 z-10 flex items-center justify-center"></div>
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white w-full h-12 z-10 flex items-center justify-center">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-1/4 bg-white rounded-full w-24 h-24 z-10 flex items-center justify-center z-9 shadow-[0_2px_20px_rgba(0,0,0,0.2)] " />
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-white w-full h-12 z-9 shadow-[0_-2px_20px_rgba(0,0,0,0.2)] flex items-center justify-center" />
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-white w-full h-12 z-10 flex items-center justify-center z-10" />
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-1/4 bg-white rounded-full w-24 h-24 z-9 shadow-[19px_20px_200px_rgba(0,0,0,0.7)] flex items-center justify-center" />
+      <div
+        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white w-full h-12 z-10 flex items-center justify-center
+      "
+      >
         <Link
           href="/"
           id="Logo image"
