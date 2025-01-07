@@ -3,7 +3,7 @@ import aboutimg from "@/public/assets/sean-marching-597x271.png";
 
 export default function About() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-6 bg-gray-100">
+    <div className="flex flex-col items-center justify-center h-screen">
       <div className="w-full max-w-3xl bg-white shadow-lg rounded-lg overflow-hidden">
         <div className="relative w-full h-64">
           <Image

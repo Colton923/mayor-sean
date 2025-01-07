@@ -15,6 +15,7 @@ type TMobile = {
 const Mobile = ({ MobileIcon, NavbarLinks, bottomedOut }: TMobile) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [homePage, setHomePage] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const path = usePathname();
   const router = useRouter();
@@ -26,9 +27,16 @@ const Mobile = ({ MobileIcon, NavbarLinks, bottomedOut }: TMobile) => {
       setHomePage(false);
     }
   }, [path]);
-
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    if (isMenuOpen) {
+      setIsAnimating(true); // Start animation
+      setTimeout(() => {
+        setIsAnimating(false); // End animation
+      }, 800); // Match CSS animation duration
+      setIsMenuOpen(false); // Close menu
+    } else {
+      setIsMenuOpen(true); // Open menu
+    }
   };
 
   return (
@@ -87,11 +95,13 @@ const Mobile = ({ MobileIcon, NavbarLinks, bottomedOut }: TMobile) => {
           )}
         </button>
       </div>
-
-      {isMenuOpen && (
+      {(isMenuOpen || isAnimating) && (
         <div
-          className={`absolute bottom-0 right-0 transform -translate-y-1/2
-             w-32 h-32 z-10 flex items-flex-start justify-flex-start flex-col-reverse`}
+          className={`absolute bottom-0 right-0 transform transition-transform duration-800 ${
+            isMenuOpen
+              ? "-translate-y-1/2 scale-100"
+              : "translate-y-full scale-0"
+          } w-32 h-32 z-10 flex items-start justify-start flex-col-reverse`}
         >
           <Dropdown NavbarLinks={NavbarLinks} toggleMenu={toggleMenu} />
         </div>

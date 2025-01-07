@@ -43,7 +43,7 @@ export default function Page() {
       <div className="flex flex-row justify-center items-center w-full bg-black bg-opacity-50 flex-wrap mx-auto">
         <div id="overlay" className="absolute h-full bg-black bg-opacity-50 ">
           <div className="flex flex-row justify-between items-center w-full bg-black bg-opacity-50 flex-wrap mx-auto">
-            <div className="flex flex-col px-4 py-8 text-center animate-blur-in">
+            <div className="flex flex-col px-4 py-4 text-center animate-blur-in mt-20">
               <h1 className="uppercase text-5xl text-blue font-extrabold text-decoration [text-shadow:_1px_0px_.5rem_rgba(255,255,255,0.5)_,_1px_-1px_.5rem_rgba(255,255,255,0.5)_]">
                 Sean Cavanaugh
               </h1>
