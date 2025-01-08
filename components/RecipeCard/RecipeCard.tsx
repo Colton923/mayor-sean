@@ -7,8 +7,6 @@ import TRecipe from "../../types/TRecipe";
 import urlFor from "@/sanity/urlFor";
 
 export default function RecipeCard({ recipe }: { recipe?: TRecipe }) {
-  console.log(recipe);
-
   if (!recipe) {
     return (
       <Card className="w-full max-w-3xl mx-auto">

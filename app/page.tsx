@@ -1,7 +1,6 @@
 import ContactForm from "@/components/forms/ContactForm/ContactForm";
-import HeroPhoto from "@/public/assets/bust-no-bg.png";
-import usa from "@/public/assets/usa.jpg";
-import landingPageImage from "@/public/assets/sean-marching-597x271.png";
+import HeroPhoto from "@/public/assets/bust-no-bg.webp";
+import usa from "@/public/assets/usa.webp";
 import { marked } from "marked";
 import styles from "@/styles/Markdown.module.css";
 

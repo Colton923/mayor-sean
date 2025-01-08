@@ -41,8 +41,6 @@ export default async function IndexPage() {
     options
   );
 
-  console.log("recipes: ", recipes);
-
   if (!recipes || recipes.length === 0) {
     return (
       <Card className="w-full max-w-3xl mx-auto">

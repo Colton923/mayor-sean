@@ -3,8 +3,8 @@ import "@/styles/globals.css";
 import { Nunito_Sans } from "next/font/google";
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
-import logo from "@/public/assets/logo-no-bg-512x512.png";
-import img from "@/public/assets/sean-marching-597x271.png";
+import logo from "@/public/assets/logo-no-bg-512x512.webp";
+import img from "@/public/assets/sean-marching-597x271.webp";
 import type { TSocialMediaIcon } from "types/TSocialMediaIcon";
 import type { Metadata } from "next";
 import {
