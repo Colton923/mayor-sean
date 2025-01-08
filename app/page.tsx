@@ -1,6 +1,6 @@
 import ContactForm from "@/components/forms/ContactForm/ContactForm";
 import HeroPhoto from "@/public/assets/bust-no-bg.webp";
-import usa from "@/public/assets/usa.webp";
+import courthouse from "@/public/assets/courthouse.webp";
 import { marked } from "marked";
 import styles from "@/styles/Markdown.module.css";
 
@@ -27,17 +27,17 @@ export default function Page() {
     <div className="min-h:screen">
       <div className="relative">
         <img
-          src={usa.src}
+          src={courthouse.src}
           alt="background image"
           className="h-screen w-full object-cover object-center"
         />
         <img
           src={HeroPhoto.src}
           alt="Sean for Mayor"
-          className="h-screen w-full absolute bottom-0 left-0 max-h-[600px] max-w-[400px] object-cover object-center"
+          className="h-screen w-full absolute bottom-0 left-0 max-h-[450px] max-w-[300px] object-cover object-center"
         />
-        <div className="absolute top-0 left-0 w-full h-[20%] bg-gradient-to-b from-white to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full h-[20%] bg-gradient-to-t from-black to-transparent"></div>
+        <div className="absolute top-0 left-0 w-full h-[25%] bg-gradient-to-b from-[rgba(0,0,0,0.8)] to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-[20%] bg-gradient-to-t from-[rgba(0,0,0,0.8)] to-transparent"></div>
       </div>
       <div className="flex flex-row justify-center items-center w-full bg-black bg-opacity-50 flex-wrap mx-auto">
         <div id="overlay" className="absolute h-full bg-black bg-opacity-50 ">

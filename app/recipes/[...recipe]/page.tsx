@@ -51,13 +51,11 @@ export default async function RecipePage({ params }: RecipePageProps) {
     }`;
 
   return (
-    <div className="flex flex-col items-center justify-center mt-20">
-      <main className="container mx-auto min-h-screen max-w-3xl p-8 flex flex-col gap-4">
-        <RecipeCard recipe={recipe} />
-        <Button size="lg" variant="ghost">
-          {recipePDFLink && <Link href={recipePDFLink}>Download PDF</Link>}
-        </Button>
-      </main>
-    </div>
+    <main className="container mx-auto min-h-screen max-w-3xl p-8 flex flex-col gap-4">
+      <RecipeCard recipe={recipe} />
+      <Button size="lg" variant="ghost">
+        {recipePDFLink && <Link href={recipePDFLink}>Download PDF</Link>}
+      </Button>
+    </main>
   );
 }

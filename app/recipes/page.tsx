@@ -43,21 +43,23 @@ export default async function IndexPage() {
 
   if (!recipes || recipes.length === 0) {
     return (
-      <Card className="w-full max-w-3xl mx-auto">
-        <CardHeader>
-          <CardTitle className="text-2xl md:text-3xl">
-            No Recipes Found
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p>Sorry, no recipes are available at the moment.</p>
-        </CardContent>
-      </Card>
+      <div className="flex flex-col items-center justify-center mt-20">
+        <Card className="w-full max-w-3xl mx-auto">
+          <CardHeader>
+            <CardTitle className="text-2xl md:text-3xl">
+              No Recipes Found
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p>Sorry, no recipes are available at the moment.</p>
+          </CardContent>
+        </Card>
+      </div>
     );
   }
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <>
       {recipes.map((recipe) => (
         <Card key={recipe.title} className="w-full max-w-3xl mx-auto mb-4">
           <CardHeader>
@@ -79,6 +81,6 @@ export default async function IndexPage() {
           </CardContent>
         </Card>
       ))}
-    </div>
+    </>
   );
 }

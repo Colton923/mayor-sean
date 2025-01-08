@@ -116,7 +116,9 @@ export default function RootLayout({
             { url: "/recipes", label: "Recipes", icon: <IconReceipt /> },
           ]}
         />
-        {children}
+        <div className="flex flex-col items-center justify-center min-h-screen">
+          {children}
+        </div>
         <Footer
           FooterIcon={<img src={img.src} alt="logo" className="w-30 h-16" />}
           socialMediaIcons={socialMediaIcons}
