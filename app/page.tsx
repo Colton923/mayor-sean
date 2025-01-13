@@ -24,8 +24,8 @@ export default function Page() {
   const LandingPageHTML = marked(LandingPageMarkdown);
 
   return (
-    <div className="min-h:screen">
-      <div className="relative">
+    <div className="min-h-screen w-full">
+      <div className="relative h-screen w-full">
         <img
           src={courthouse.src}
           alt="background image"
@@ -55,7 +55,7 @@ export default function Page() {
               <h2 className="text-3xl text-red [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_] pb-1">
                 Working for{" "}
                 <span className="underline text-blue font-bold text-4xl [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_,_-1px_-1px_.5rem_white_,_-1px_1px_.5rem_white_]">
-                  change.
+                  Monmouth.
                 </span>
               </h2>
             </div>

@@ -99,11 +99,11 @@ export default function RootLayout({
           MobileIcon={MobileIcon}
           NavbarLinks={[
             { url: "/", label: "Home", icon: <IconHome /> },
-            { url: "/about", label: "About Sean", icon: <IconMan /> },
-            { url: "/issues", label: "Issues", icon: <IconRuler /> },
+            { url: "/sean", label: "Sean", icon: <IconMan /> },
+            { url: "/forum", label: "January 10th Forum", icon: <IconRuler /> },
             {
-              url: "/endorsements",
-              label: "Endorsements",
+              url: "/next-four-years",
+              label: "The Next Four Years",
               icon: <IconChecks />,
             },
             { url: "/donate", label: "Donate", icon: <IconHeart /> },
@@ -123,10 +123,10 @@ export default function RootLayout({
           FooterIcon={<img src={img.src} alt="logo" className="w-30 h-16" />}
           socialMediaIcons={socialMediaIcons}
           privacyPolicy="/privacy"
-          tOS="/tos"
-          address="1234 Main St, Anytown, USA"
-          email=""
-          phone=""
+          tOS="/terms-of-service"
+          address="Monmouth IL"
+          email="scgad@hotmail.com"
+          phone="+12408084635"
         />
       </body>
     </html>
