@@ -47,15 +47,15 @@ export default function Page() {
                 Sean Cavanaugh
               </h1>
               <h2 className="text-3xl text-red [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_] pt-4">
-                Working for{" "}
-                <span className="underline text-blue font-bold text-4xl [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_,_-1px_-1px_.5rem_white_,_-1px_1px_.5rem_white_]">
-                  you.
+                Sean Cavanaugh for
+                <span className="underline text-blue font-bold text-3xl [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_,_-1px_-1px_.5rem_white_,_-1px_1px_.5rem_white_] px-1">
+                  Monmouth.
                 </span>
               </h2>
               <h2 className="text-3xl text-red [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_] pb-1">
-                Working for{" "}
-                <span className="underline text-blue font-bold text-4xl [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_,_-1px_-1px_.5rem_white_,_-1px_1px_.5rem_white_]">
-                  Monmouth.
+                Sean Cavanaugh for
+                <span className="underline text-blue font-bold text-3xl [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_,_-1px_-1px_.5rem_white_,_-1px_1px_.5rem_white_] px-1">
+                  you.
                 </span>
               </h2>
             </div>

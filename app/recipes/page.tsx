@@ -59,9 +59,9 @@ export default async function IndexPage() {
   }
 
   return (
-    <>
+    <div className="justify-self-center">
       {recipes.map((recipe) => (
-        <Card key={recipe.title} className="w-full max-w-3xl mx-auto mb-4">
+        <Card key={recipe.title} className="mb-4">
           <CardHeader>
             <CardTitle className="text-2xl md:text-3xl">
               {recipe.title}
@@ -81,6 +81,6 @@ export default async function IndexPage() {
           </CardContent>
         </Card>
       ))}
-    </>
+    </div>
   );
 }

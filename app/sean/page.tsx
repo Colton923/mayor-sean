@@ -3,8 +3,8 @@ import aboutimg from "@/public/assets/sean-marching-597x271.webp";
 
 export default function Sean() {
   return (
-    <div className="w-full max-w-3xl bg-white shadow-lg rounded-lg overflow-hidden">
-      <div className="relative w-full h-64">
+    <div className="min-h-screen w-full">
+      <div className="relative h-screen w-full">
         <Image
           src={aboutimg.src} // Replace with your image path
           alt="Sean"
@@ -13,7 +13,7 @@ export default function Sean() {
           className="w-full h-full"
         />
       </div>
-      <div className="p-8">
+      <div className="container mx-auto px-4 py-8 shadow-lg bg-white bg-opacity-90 max-w-5xl">
         <h1 className="text-3xl font-bold text-gray-800 mb-4">
           My name is Sean Cavanaugh.
         </h1>
