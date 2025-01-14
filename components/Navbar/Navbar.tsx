@@ -44,7 +44,7 @@ const Navbar = ({ DesktopIcon, MobileIcon, NavbarLinks }: TNavbar) => {
 
   return (
     <nav className="flex">
-      <div className="hidden z-10 md:block fixed top-0 left-0 right-0">
+      <div className="hidden z-10 lg:block fixed top-0 left-0 right-0">
         <div
           className={`shadow-md w-full ${
             isScrolled ? "bg-white bg-opacity-100" : ""
@@ -54,7 +54,7 @@ const Navbar = ({ DesktopIcon, MobileIcon, NavbarLinks }: TNavbar) => {
         </div>
       </div>
       <div
-        className={`md:hidden z-10 fixed bottom-0 left-0 right-0 transition-transform duration-300 ${
+        className={`lg:hidden z-10 fixed bottom-0 left-0 right-0 transition-transform duration-300 ${
           bottomedOut
             ? "transform translate-y-[50vh]"
             : "flex items-center justify-center"
