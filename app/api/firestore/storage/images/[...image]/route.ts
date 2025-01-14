@@ -1,13 +1,10 @@
 import { storage } from "../../../../../../firebase/firebaseAdmin";
 // import { getDownloadURL } from "firebase-admin/storage";
 
-export async function GET(
-  request: Request,
-  { params }: { params: { image: string[] } }
-) {
+export async function GET(request: Request) {
   try {
     // Extract the slug parameter
-    const { image } = await params;
+    const { image } = await request.json();
     // Create a reference to the specific file in Firebase Storage
     const fileRef = storage
       .bucket("gs://mayor-sean.firebasestorage.app")
