@@ -46,15 +46,15 @@ export default function Page() {
               <h1 className="uppercase text-5xl text-blue font-extrabold text-decoration [text-shadow:_1px_0px_.5rem_rgba(255,255,255,0.5)_,_1px_-1px_.5rem_rgba(255,255,255,0.5)_]">
                 Sean Cavanaugh
               </h1>
-              <h2 className="text-3xl text-red [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_] pt-4">
-                Sean Cavanaugh for
-                <span className="underline text-blue font-bold text-3xl [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_,_-1px_-1px_.5rem_white_,_-1px_1px_.5rem_white_] px-1">
+              <h2 className="text-4xl text-red [text-shadow:_0px_0px_3px_white_,_0px_0px_3px_white_] pt-4">
+                Cavanaugh for
+                <span className="underline text-blue font-bold text-4xl [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_,_-1px_-1px_.5rem_white_,_-1px_1px_.5rem_white_] px-1">
                   Monmouth.
                 </span>
               </h2>
-              <h2 className="text-3xl text-red [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_] pb-1">
-                Sean Cavanaugh for
-                <span className="underline text-blue font-bold text-3xl [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_,_-1px_-1px_.5rem_white_,_-1px_1px_.5rem_white_] px-1">
+              <h2 className="text-4xl text-red [text-shadow:_0px_0px_3px_white_,_0px_0px_3px_white_] pb-1">
+                Cavanaugh for
+                <span className="underline text-blue font-bold text-4xl [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_,_-1px_-1px_.5rem_white_,_-1px_1px_.5rem_white_] px-1">
                   you.
                 </span>
               </h2>
