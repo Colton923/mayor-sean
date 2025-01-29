@@ -62,7 +62,7 @@ export default function RecipeCard({ recipe }: { recipe?: TRecipe }) {
             ))}
           </ol>
         </div>
-        {recipe.additionalNotes.length > 0 && (
+        {recipe.additionalNotes?.length > 0 && (
           <div>
             <h3 className="text-lg font-semibold mb-2">Additional Notes</h3>
             <ul className="list-disc list-inside space-y-1">
