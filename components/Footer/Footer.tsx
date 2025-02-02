@@ -72,8 +72,7 @@ const Footer = ({
           </div>
           <div>
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Your Company Name. All rights
-              reserved.
+              © {new Date().getFullYear()} Friends of Sean Cavanaugh
             </p>
           </div>
         </div>

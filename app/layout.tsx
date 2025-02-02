@@ -100,10 +100,10 @@ export default function RootLayout({
           NavbarLinks={[
             { url: "/", label: "Home", icon: <IconHome /> },
             { url: "/sean", label: "Sean", icon: <IconMan /> },
-            { url: "/forum", label: "January 10th Forum", icon: <IconRuler /> },
+            { url: "/forum", label: "Q & A", icon: <IconRuler /> },
             {
               url: "/next-four-years",
-              label: "The Next Four Years",
+              label: "Next Four Years",
               icon: <IconChecks />,
             },
             { url: "/donate", label: "Donate", icon: <IconHeart /> },

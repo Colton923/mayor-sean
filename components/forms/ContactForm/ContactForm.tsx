@@ -5,18 +5,26 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Label } from "@/components/ui/Label/Label";
 import { Input } from "@/components/ui/Input/Input";
-import { Textarea } from "@/components/ui/TextArea/TextArea";
-import Button from "@/components/ui/Button/Button";
 import Intersection from "@/components/ui/Intersection/Intersection";
+import { Textarea } from "@/components/ui/TextArea/TextArea";
 
 type FormData = {
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
   phone: string;
-  message: string;
+  mailingAddress: string;
 };
 
-const ContactForm = ({ c }: { c: "white" | "black" }) => {
+type TContactForm = ({
+  contactFormType,
+}: {
+  contactFormType: "contact" | "yardSigns";
+}) => JSX.Element;
+
+const ContactForm: TContactForm = (t) => {
+  const { contactFormType } = { ...t };
+
   const {
     register,
     handleSubmit,
@@ -30,7 +38,11 @@ const ContactForm = ({ c }: { c: "white" | "black" }) => {
 
   const onSubmit = (data: FormData) => {
     console.log("Form data:", data);
+
+    //TODO:  submit to firebase firestore collection
+
     reset();
+
     setSubmitted(true);
   };
 
@@ -45,10 +57,8 @@ const ContactForm = ({ c }: { c: "white" | "black" }) => {
     } else
       return (
         <div className="bg-white text-foreground p-4 rounded-md shadow-lg">
-          <p className="text-lg font-semibold">Message sent successfully!</p>
-          <p className="text-sm mt-2">
-            We will get back to you as soon as possible.
-          </p>
+          <p className="text-lg font-semibold">Thank you.</p>
+          <p className="text-sm mt-2">From the Friends of Sean Cavanaugh.</p>
         </div>
       );
   };
@@ -76,59 +86,93 @@ const ContactForm = ({ c }: { c: "white" | "black" }) => {
       7
     )}-${cleaned.slice(7, 11)}`;
   };
+
   const handlePhoneInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const formatted = formatPhoneNumber(e.currentTarget.value);
     setValue("phone", formatted);
   };
 
   const FadeInSubmittedOverlay = Intersection(SubmittedOverlay);
+
   const Form = () => {
     return (
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className={`space-y-1 block ${styles["fixed-form"]} p-4 shadow-sm bg-opacity-90 bg-light-blue border border-black`}
+        className={`space-y-1 block ${styles["fixed-form"]} p-4 shadow-sm bg-opacity-90 bg-blue border border-white max-w-2xl mx-auto rounded-md`}
       >
         <div className="text-center">
-          <h1 className="text-2xl text-red underline">Get Campaign Updates</h1>
+          <h1 className="text-2xl text-white underline">
+            {contactFormType === "contact"
+              ? " Join our Supporters"
+              : contactFormType === "yardSigns"
+              ? "Request a Yard Sign"
+              : "Join our Supporters"}
+          </h1>
         </div>
         <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4">
-          {/* Name Field */}
+          {/* firstName Field */}
           <div className="space-y-2">
-            {errors.name ? (
+            {errors.firstName ? (
               <span
-                className={`text-red text-sm font-extrabold [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_] ${styles["error-message"]}`}
+                className={`text-red text-sm font-extrabold [text-shadow:_0px_0px_30px_white_] ${styles["error-message"]}`}
               >
-                {errors.name.message}
+                {errors.firstName.message}
               </span>
             ) : (
-              <Label c={c} htmlFor="name">
-                Name
+              <Label c={"white"} htmlFor="firstName">
+                First Name
               </Label>
             )}
             <Input
-              id="name"
+              id="firstName"
               type="text"
-              placeholder="First & Last Name"
-              {...register("name", {
+              placeholder="First Name"
+              {...register("firstName", {
+                required: "firstName is required",
+                pattern: {
+                  value: /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/,
+                  message: "Invalid first name",
+                },
+              })}
+            />
+          </div>
+          {/* Last Name Field */}
+          <div className="space-y-2">
+            {errors.lastName ? (
+              <span
+                className={`text-red text-sm font-extrabold [text-shadow:_0px_0px_30px_white_] ${styles["error-message"]}`}
+              >
+                {errors.lastName.message}
+              </span>
+            ) : (
+              <Label c={"white"} htmlFor="name">
+                Last Name
+              </Label>
+            )}
+            <Input
+              id="lastName"
+              type="text"
+              placeholder="Last Name"
+              {...register("lastName", {
                 required: "Name is required",
                 pattern: {
                   value: /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/,
-                  message: "Invalid name",
+                  message: "Invalid last name",
                 },
               })}
             />
           </div>
 
           {/* Email Field */}
-          <div className="space-y-2">
+          <div className="space-y-2 w-full">
             {errors.email ? (
               <span
-                className={`text-red text-sm font-extrabold [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_] ${styles["error-message"]}`}
+                className={`text-red text-sm font-extrabold [text-shadow:_0px_0px_30px_white_] ${styles["error-message"]}`}
               >
                 {errors.email.message}
               </span>
             ) : (
-              <Label c={c} htmlFor="email">
+              <Label c={"white"} htmlFor="email">
                 Email
               </Label>
             )}
@@ -148,36 +192,17 @@ const ContactForm = ({ c }: { c: "white" | "black" }) => {
           </div>
         </div>
 
-        {/* Message Field */}
-        <div className="space-y-2">
-          {errors.message ? (
-            <span
-              className={`text-red text-sm font-extrabold [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_] ${styles["error-message"]}`}
-            >
-              {errors.message.message}
-            </span>
-          ) : (
-            <Label c={c} htmlFor="message">
-              Message
-            </Label>
-          )}
-          <Textarea
-            id="message"
-            placeholder="Your message here..."
-            {...register("message", { required: "Message is required" })}
-          />
-        </div>
-        <div className="flex flex-col justify-between space-y-4 md:space-y-0 md:flex-row md:space-x-4">
+        <div className="flex flex-col justify-start space-y-4 md:space-y-0 md:flex-row md:space-x-4">
           {/* Phone Field */}
-          <div className="space-y-2">
+          <div className="space-y-2  min-w-[150px]">
             {errors.phone ? (
               <span
-                className={`text-red text-sm font-extrabold [text-shadow:_1px_1px_.5rem_white_,_1px_-1px_.5rem_white_] ${styles["error-message"]}`}
+                className={`text-red text-sm font-extrabold [text-shadow:_0px_0px_30px_white_] ${styles["error-message"]}`}
               >
                 {errors.phone.message}
               </span>
             ) : (
-              <Label c={c} htmlFor="phone">
+              <Label c={"white"} htmlFor="phone">
                 Phone
               </Label>
             )}
@@ -197,20 +222,50 @@ const ContactForm = ({ c }: { c: "white" | "black" }) => {
               })}
             />
           </div>
-          {/* Submit Button */}
+          {/* Mailing Address Field */}
+          <div className="space-y-2 w-full">
+            {errors.mailingAddress ? (
+              <span
+                className={`text-red text-sm font-extrabold [text-shadow:_0px_0px_30px_white_] ${styles["error-message"]}`}
+              >
+                {errors.mailingAddress.message}
+              </span>
+            ) : (
+              <Label c={"white"} htmlFor="mailingAddress">
+                Mailing Address
+              </Label>
+            )}
+            <Textarea
+              id="mailingAddress"
+              placeholder="1234 Main St. Anytown, USA 12345"
+              {...register("mailingAddress", {
+                required: "Mailing Address is required",
+                pattern: {
+                  value: /^[a-zA-Z0-9\s,'-]*$/,
+                  message: "Invalid mailing address",
+                },
+              })}
+            />
+            {/* Submit Button */}
+          </div>
           <input
             type="submit"
-            className="btn btn-primary w-full md:w-auto cursor-pointer bg-red text-white font-bold py-2 px-4 hover:bg-red-600 transition-all duration-300 ease-in-out transform hover:scale-105"
+            className="cursor-pointer bg-red text-white font-bold text-lg rounded-md hover:bg-opacity-80 px-1"
             value="Submit"
+            width={100}
+            style={{
+              height: "40px",
+              alignSelf: "flex-end",
+            }}
           />
         </div>
-        <div className="text-sm text-muted-foreground mt-4">
+        <div className="text-sm text-muted-foreground mt-4 text-white">
           By submitting this form, you agree to our{" "}
-          <a href="/privacy-policy" className="underline">
+          <a href="/privacy-policy" className="underline text-white">
             Privacy Policy
           </a>{" "}
           and{" "}
-          <a href="/terms-of-service" className="underline">
+          <a href="/terms-of-service" className="underline text-white">
             Terms of Service
           </a>
         </div>

@@ -64,7 +64,9 @@ export default function RecipeCard({ recipe }: { recipe?: TRecipe }) {
         </div>
         {recipe.additionalNotes?.length > 0 && (
           <div>
-            <h3 className="text-lg font-semibold mb-2">Additional Notes</h3>
+            <h3 className="text-lg font-semibold mb-2">
+              {"something sean mentioned"}
+            </h3>
             <ul className="list-disc list-inside space-y-1">
               {recipe.additionalNotes.map((note, index) => (
                 <li key={index}>{note}</li>
