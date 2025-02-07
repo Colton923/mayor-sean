@@ -92,9 +92,6 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <div className="md:flex px-4 py-8 text-center w-full justify-center">
-        <ContactForm contactFormType="contact" />
-      </div>
       <div className="flex flex-row justify-center items-center w-full flex-wrap mx-auto min-h-screen">
         <div className="flex flex-col px-4 py-4 text-center mt-20">
           <h1 className="uppercase text-xl text-blue font-extrabold text-decoration [text-shadow:_1px_0px_1px_rgba(255,255,255,.9)_,_1px_-1px_.5rem_rgba(255,255,255,0.5)_] max-w-5xl">
@@ -103,6 +100,9 @@ export default function Page() {
             Sean Cavanaugh for YOU.
           </h1>
         </div>
+      </div>
+      <div className="md:flex px-4 py-8 text-center w-full justify-center">
+        <ContactForm contactFormType="contact" />
       </div>
     </div>
   );

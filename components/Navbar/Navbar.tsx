@@ -47,7 +47,7 @@ const Navbar = ({ DesktopIcon, MobileIcon, NavbarLinks }: TNavbar) => {
       <div className="hidden z-10 lg:block fixed top-0 left-0 right-0">
         <div
           className={`shadow-md w-full ${
-            isScrolled ? "bg-white bg-opacity-100" : "bg-white bg-opacity-100"
+            isScrolled ? "bg-white bg-opacity-0" : "bg-white bg-opacity-100"
           } transition-colors duration-300`}
         >
           <Desktop NavbarLinks={NavbarLinks} DesktopIcon={DesktopIcon} />

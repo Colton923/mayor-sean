@@ -3,8 +3,6 @@ import "@/styles/globals.css";
 import { Nunito_Sans } from "next/font/google";
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
-import logo from "@/public/assets/logo-no-bg-512x512.webp";
-import img from "@/public/assets/sean-marching-597x271.webp";
 import type { TSocialMediaIcon } from "types/TSocialMediaIcon";
 import type { Metadata } from "next";
 import {
@@ -17,6 +15,8 @@ import {
   IconRuler,
   IconSignRight,
 } from "@tabler/icons-react";
+import Logo from "@/components/Logo/Logo";
+
 export const metadata: Metadata = {
   title: "Sean Cavanaugh for Mayor",
   description: "Sean Cavanaugh is a candidate for mayor in Monmouth, Illinois.",
@@ -66,8 +66,8 @@ export default function RootLayout({
   ];
 
   // small and large css classes for image resizing on breakpoints
-  const DesktopIcon = <img src={logo.src} alt="logo" className="w-36 h-24" />;
-  const MobileIcon = <img src={logo.src} alt="logo" className="w-18 h-12" />;
+  const DesktopIcon = <Logo type={"desktop"} />;
+  const MobileIcon = <Logo type={"mobile"} />;
   return (
     <html lang="en">
       <head>
@@ -120,7 +120,7 @@ export default function RootLayout({
           {children}
         </div>
         <Footer
-          FooterIcon={<img src={img.src} alt="logo" className="w-30 h-16" />}
+          FooterIcon={<Logo type={"mobile"} />}
           socialMediaIcons={socialMediaIcons}
           privacyPolicy="/privacy"
           tOS="/terms-of-service"

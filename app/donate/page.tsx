@@ -11,7 +11,7 @@ export default function Page() {
         <p className="font-semibold mb-2">118 South 8th Street</p>
         <p className="font-semibold mb-2">Monmouth, Illinois 61462</p>
       </div>
-      <p className="mt-4">
+      <p className="mt-4 font-semibold max-w-prose">
         Please mail to the above. We greatly appreciate your generosity!
       </p>
     </div>

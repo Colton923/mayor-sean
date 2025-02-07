@@ -1,10 +1,10 @@
-export default async function TheNextFourYearsPage() {
+import logo from "@/public/assets/logo-words-nobg.webp";
+
+export default function TheNextFourYearsPage() {
   return (
     <div className="min-h-screen w-full">
       <img
-        src={
-          "https://firebasestorage.googleapis.com/v0/b/mayor-sean.firebasestorage.app/o/sean-campaign-photos%2Flogo.webp?alt=media&token=588cbec7-0d3f-499c-8bab-c4d1c24c056b"
-        }
+        src={logo.src}
         alt="Sean"
         width={512}
         height={512}
