@@ -1,4 +1,4 @@
-import logo from "@/public/assets/logo-words-nobg.webp";
+import logo from "@/public/general/android-chrome-512x512.png";
 
 export default function ForumPage() {
   return (
