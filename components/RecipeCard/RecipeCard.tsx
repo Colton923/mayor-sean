@@ -55,7 +55,7 @@ export default function RecipeCard({ recipe }: { recipe?: TRecipe }) {
           </ul>
         </div>
         <div>
-          <h3 className="text-lg font-semibold mb-2">Instructions</h3>
+          <h3 className="text-lg font-semibold mb-2">Preparation</h3>
           <ol className="list-decimal list-inside space-y-2">
             {recipe.preparationSteps.map((step, index) => (
               <li key={index}>{step}</li>
@@ -64,9 +64,7 @@ export default function RecipeCard({ recipe }: { recipe?: TRecipe }) {
         </div>
         {recipe.additionalNotes?.length > 0 && (
           <div>
-            <h3 className="text-lg font-semibold mb-2">
-              {"something sean mentioned"}
-            </h3>
+            <h3 className="text-lg font-semibold mb-2">Points to Consider</h3>
             <ul className="list-disc list-inside space-y-1">
               {recipe.additionalNotes.map((note, index) => (
                 <li key={index}>{note}</li>
