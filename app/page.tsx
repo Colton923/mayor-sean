@@ -1,6 +1,6 @@
-import ContactForm from "@/components/forms/ContactForm/ContactForm";
 import HeroPhoto from "@/public/assets/bust-no-bg.webp";
 import Link from "next/link";
+import ContactPage from "./contact/page";
 
 export default function Page() {
   return (
@@ -37,7 +37,7 @@ export default function Page() {
               </h2>
             </div>
             <div className="hidden lg:flex flex-col px-4 py-8 text-center">
-              <ContactForm contactFormType="contact" />
+              <ContactPage />
             </div>
           </div>
         </div>
@@ -102,7 +102,7 @@ export default function Page() {
         </div>
       </div>
       <div className="md:flex px-4 py-8 text-center w-full justify-center">
-        <ContactForm contactFormType="contact" />
+        <ContactPage />
       </div>
     </div>
   );

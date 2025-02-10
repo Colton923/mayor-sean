@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/Input/Input";
 import Intersection from "@/components/ui/Intersection/Intersection";
 import { Textarea } from "@/components/ui/TextArea/TextArea";
 
-type FormData = {
+export type FormData = {
   firstName: string;
   lastName: string;
   email: string;
@@ -35,12 +35,18 @@ const ContactForm: TContactForm = (t) => {
     mode: "onBlur",
   });
   const [submitted, setSubmitted] = useState(false);
-
+  const submitForm = async (values: FormData) => {
+    const res = await fetch("/api/mail", {
+      method: "POST",
+      body: JSON.stringify(values),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    return res.json();
+  };
   const onSubmit = (data: FormData) => {
-    console.log("Form data:", data);
-
-    //TODO:  submit to firebase firestore collection
-
+    submitForm(data);
     reset();
 
     setSubmitted(true);
