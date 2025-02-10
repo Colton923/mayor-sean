@@ -59,7 +59,7 @@ export default async function IndexPage() {
   }
 
   return (
-    <div className="justify-self-center">
+    <div className="justify-self-center w-full max-w-3xl mx-auto mt-32">
       {recipes.map((recipe) => (
         <Card key={recipe.title} className="mb-4">
           <CardHeader>
