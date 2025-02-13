@@ -10,11 +10,11 @@ export default function Page() {
     <div className="min-h-screen w-full">
       <div className="flex flex-row justify-center items-center w-full flex-wrap mx-auto py-36">
         <div className="flex flex-col px-4 py-4 text-center">
-          <h1 className="uppercase text-5xl text-blue font-extrabold text-decoration max-w-5xl">
+          <h1 className="uppercase text-4xl lg:text-6xl text-blue font-extrabold text-decoration max-w-5xl">
             {`"Everything I have done in my life has led me to this very moment."`}
             <br />
             <br />
-            <p className="text-3xl text-red [text-shadow:_0px_0px_3px_white_,_0px_0px_3px_white_]">
+            <p className="text-red [text-shadow:_0px_0px_3px_white_,_0px_0px_3px_white_] tracking-widest">
               - Sean Cavanaugh
             </p>
           </h1>

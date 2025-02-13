@@ -1,49 +1,38 @@
-// import logo from "@/public/general/android-chrome-512x512.png";
 import styles from "./TheNextFourYearsPage.module.css";
+
 export default function TheNextFourYearsPage() {
   return (
-    <div className="min-h-screen w-full mt-24">
-      {/* <img
-        src={logo.src}
-        alt="Sean"
-        width={512}
-        height={512}
-        style={{
-          justifySelf: "center",
-          marginTop: "5em",
-          marginBottom: "2em",
-        }}
-      /> */}
-      <div className="max-w-4xl mx-auto p-6">
-        <h1 className="text-3xl font-semibold mb-4">The Next Four Years</h1>
+    <div className="max-w-4xl mx-auto my-20 md:my-4">
+      <div className="max-w-4xl mx-4">
+        <h1 className="text-3xl font-semibold mb-4 text-center">
+          The Next Four Years
+        </h1>
         <div className="flex flex-row items-center justify-center space-x-4">
-          <p className="text-xs text-center text-gray p-1 italic">
-            Sean Cavanaugh
-          </p>
+          <p className="text-xs text-center text-gray italic">Sean Cavanaugh</p>
           <div className={styles.nextFourYears} />
-          <p className="text-xs text-center text-gray p-1 italic">
+          <p className="text-xs text-center text-gray italic">
             The Change Monmouth Needs
           </p>
         </div>
         <div className="space-y-6">
           <div>
-            <p className="text-lg font-bold p-2 ">
+            <p className="text-lg font-bold">
               Over the next four years my job will be to build a stronger
               community by strengthening the entire community. It is time for a
               change and I am here to provide it.
             </p>
 
-            <p className={" text-base indent-1"}>
+            <p className={"text-base indent-1"}>
               In addition to completing current projects, maintaining our
               infrastructure and ensuring our city services are working nicely,
               I have additional plans.
             </p>
-            <p className={" text-base indent-1"}>
+            <p className={"text-base indent-1"}>
               <br />
               As I have publicly stated numerous times, I want to attack our
               housing crisis.
             </p>
-            <p className={" text-base indent-1"}>
+            <p className={"text-base indent-1"}>
               <br />
               Currently, in Monmouth, we don't have enough housing, whether it
               be for ownership, or quality rentals. We have an aging housing
@@ -51,7 +40,7 @@ export default function TheNextFourYearsPage() {
               housing. We all know people who work in Monmouth, but live out of
               the city and county. It would be better if they could live here.
             </p>
-            <p className={" text-base indent-1"}>
+            <p className={"text-base indent-1"}>
               <br />
               We need to keep people from moving away, as our population has
               shrunken considerably the past few decades. Less population equals
@@ -59,7 +48,7 @@ export default function TheNextFourYearsPage() {
               our local businesses. It also lessens our pool of individuals to
               fill jobs.
             </p>
-            <p className={" text-base indent-1"}>
+            <p className={"text-base indent-1"}>
               <br />
               Galesburg recently had a study done regarding their housing
               crisis, which puts us behind the 8-ball. They have a new,
@@ -67,7 +56,7 @@ export default function TheNextFourYearsPage() {
               crisis. We need an action plan before we fall further behind, and
               more people move away.
             </p>
-            <p className={" text-base indent-1"}>
+            <p className={"text-base indent-1"}>
               <br />I want to appoint a task force to focus exclusively on the
               single issue of our housing crisis. We have people here in
               Monmouth that can deliver solutions, as we seek grants; work with
@@ -76,7 +65,7 @@ export default function TheNextFourYearsPage() {
               problem are amongst us. A task force will work when done
               correctly, and it will be done correctly.
             </p>
-            <p className={" text-base indent-1"}>
+            <p className={"text-base indent-1"}>
               <br />
               Another priority, we need to make a significant effort to develop
               the South side of town. Those living there have told me in every
@@ -85,7 +74,7 @@ export default function TheNextFourYearsPage() {
               me a hug and said, “Thank you for thinking about us.” I am
               thinking about him, and everyone else.
             </p>
-            <p className={" text-base indent-1"}>
+            <p className={"text-base indent-1"}>
               <br />
               My goal isn't to ignore one part of town in favor of another, my
               goal is to give the greatest effort in all parts of our wonderful
@@ -93,19 +82,19 @@ export default function TheNextFourYearsPage() {
               blank canvas just waiting to be filled in. It is time to paint
               that canvas. People have been waiting for far too long.
             </p>
-            <p className={" text-base indent-1"}>
+            <p className={"text-base indent-1"}>
               <br />
               People should be proud not only of their town, but of their
               neighborhoods as well.
             </p>
-            <p className={" text-base indent-1"}>
+            <p className={"text-base indent-1"}>
               <br />
               Next, I will work very hard to recruit small business and large
               business. I will urge large business to expand here – such as Big
               River Resources. As mayor, I will use every resource at my
               disposal to bring business to Monmouth.
             </p>
-            <p className={" text-base indent-1"}>
+            <p className={"text-base indent-1"}>
               <br />I heard during an interview that Monmouth is approached
               frequently by businesses looking to possibly locate here. We only
               see who has, not who has not. Every prospect will be given my full
@@ -113,14 +102,14 @@ export default function TheNextFourYearsPage() {
               can get it here? No one person has a monopoly on bringing business
               here, and I will prove that. And when I do, we will all benefit.
             </p>
-            <p className={" text-base indent-1"}>
+            <p className={"text-base indent-1"}>
               <br />
               Another area of extreme importance to me is to create a culture of
               community service. I want to encourage the wonderful people of
               Monmouth to be more involved in their community. When people
               decide to give of themselves, Monmouth becomes stronger.
             </p>
-            <p className={" text-base indent-1"}>
+            <p className={"text-base indent-1"}>
               <br />
               Anyone can do something to strengthen our town. It could be
               something as simple as donating to the Knights of Columbus Tootsie
@@ -130,27 +119,27 @@ export default function TheNextFourYearsPage() {
               FYI, the park district loves it when people donate trees – they
               can even help you pick one out.
             </p>
-            <p className={" text-base indent-1"}>
+            <p className={"text-base indent-1"}>
               <br />
               There is no limit to what people can do, when it comes to
               supporting their community. Some people donate funds, which is
               outstanding, and some people donate their time, which is just as
               outstanding.
             </p>
-            <p className={" text-base indent-1"}>
+            <p className={"text-base indent-1"}>
               <br />
               You may wish to run for office – school board, city council or
               another position. Don’t be afraid to be active, as you do have the
               courage to succeed.
             </p>
-            <p className={" text-base indent-1"}>
+            <p className={"text-base indent-1"}>
               <br />
               We can all contribute in one way or another. I do it all over the
               place – by choice. You can do it too, by choice. Please do. If you
               do, I promise, you will feel fantastic as a result, and Monmouth
               wins!
             </p>
-            <p className={" text-base indent-1"}>
+            <p className={"text-base indent-1"}>
               <br />
               What I intend to do as mayor is not limited by what appears on my
               website or printed materials. I intend to be a mayor for all the
@@ -158,24 +147,24 @@ export default function TheNextFourYearsPage() {
               of which I fear. I have immense political will, and I intend to
               use it.
             </p>
-            <p className={" text-base indent-1"}>
+            <p className={"text-base indent-1"}>
               <br />
               There is another important thing that the mayor does – he sets the
               tone. I want to be sure to set a tone of the importance of
               listening and encouraging people to work together.
             </p>
-            <p className={" text-base indent-1"}>
+            <p className={"text-base indent-1"}>
               <br />I want to set a tone for city employees as well as
               expectations that they will do their best in their work to serve
               the people that pay their salaries. I also want the city employees
               to know that am an employee-friendly mayor.
             </p>
-            <p className={" text-base indent-1"}>
+            <p className={"text-base indent-1"}>
               <br />I want a tone of outreach, where hopefully the city can find
               new ways to partner with the college, or businesses and churches
               to do even more together.
             </p>
-            <p className={" text-base indent-1"}>
+            <p className={"text-base indent-1"}>
               <br />
               Tone, I think, is important. Sean Cavanaugh is here for you, so
               you will not be ignored.
@@ -183,7 +172,7 @@ export default function TheNextFourYearsPage() {
 
             {/* I will work for Republicans..... */}
 
-            <p className={" text-base indent-1"}>
+            <p className={"text-base indent-1"}>
               <br />I will be accessible and transparent. I will do what is
               necessary for all of Monmouth to succeed.
             </p>

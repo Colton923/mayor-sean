@@ -1,6 +1,6 @@
 export default function Page() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-center p-4">
+    <div className="flex flex-col items-center justify-center text-center">
       <p className="mb-4 text-lg max-w-prose">
         Thank you for supporting the Friends of Sean Cavanaugh. If you prefer to
         send your donation via check, money order, or cashier's check, please
