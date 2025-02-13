@@ -26,6 +26,7 @@ export async function POST(request: Request) {
     lastName: mailData.lastName,
     mailingAddress: mailData.mailingAddress,
     phone: mailData.phone,
+    message: mailData.message,
   };
 
   const msg = {
