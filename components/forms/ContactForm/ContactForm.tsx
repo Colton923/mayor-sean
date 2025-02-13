@@ -14,6 +14,7 @@ export type FormData = {
   email: string;
   phone: string;
   mailingAddress: string;
+  message: string;
 };
 
 type TContactForm = ({
@@ -104,7 +105,7 @@ const ContactForm: TContactForm = (t) => {
     return (
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className={`space-y-1 block ${styles["fixed-form"]} p-4 shadow-sm bg-opacity-90 bg-blue border border-white max-w-2xl mx-auto rounded-md`}
+        className={`space-y-1 block ${styles["fixed-form"]} p-4 shadow-sm bg-blue max-w-2xl mx-auto`}
       >
         <div className="text-center">
           <h1 className="text-2xl text-white underline">
@@ -220,7 +221,6 @@ const ContactForm: TContactForm = (t) => {
               max={17}
               maxLength={17}
               {...register("phone", {
-                required: "10 Digits Required",
                 pattern: {
                   value: /^\+1 \(\d{3}\) \d{3}-\d{4}$/,
                   message: "Invalid phone number",
@@ -245,14 +245,13 @@ const ContactForm: TContactForm = (t) => {
               id="mailingAddress"
               placeholder="1234 Main St. Anytown, USA 12345"
               {...register("mailingAddress", {
-                required: "Mailing Address is required",
                 pattern: {
                   value: /^[a-zA-Z0-9\s,'-]*$/,
                   message: "Invalid mailing address",
                 },
               })}
             />
-            {/* Submit Button */}
+            <Textarea id="message" {...register("message", {})} />
           </div>
           <input
             type="submit"

@@ -44,10 +44,10 @@ const Navbar = ({ DesktopIcon, MobileIcon, NavbarLinks }: TNavbar) => {
 
   return (
     <nav className="flex">
-      <div className="hidden z-10 lg:block fixed top-0 left-0 right-0">
+      <div className="hidden z-10 lg:block fixed top-0 left-0 right-0 h-[95px]">
         <div
-          className={`shadow-md w-full ${
-            isScrolled ? "bg-white bg-opacity-0" : "bg-white bg-opacity-100"
+          className={`shadow-md w-full bg-white ${
+            isScrolled ? "" : ""
           } transition-colors duration-300`}
         >
           <Desktop NavbarLinks={NavbarLinks} DesktopIcon={DesktopIcon} />

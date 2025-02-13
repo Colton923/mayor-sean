@@ -1,4 +1,4 @@
-import logo from "@/public/general/android-chrome-512x512.png";
+import desktopLogo from "@/public/assets/small_logo.png";
 import mobileLogo from "@/public/assets/logo_nobg.png";
 
 const Logo = ({ type }: { type: "mobile" | "desktop" }) => {
@@ -12,7 +12,7 @@ const Logo = ({ type }: { type: "mobile" | "desktop" }) => {
     case "desktop":
       return (
         <div className="flex items-center bg-white">
-          <img src={logo.src} alt="logo-desktop" className="w-24 h-24" />
+          <img src={desktopLogo.src} alt="logo-desktop" className="w-42 h-24" />
         </div>
       );
   }

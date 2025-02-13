@@ -16,6 +16,7 @@ import {
   IconSignRight,
 } from "@tabler/icons-react";
 import Logo from "@/components/Logo/Logo";
+import ParallaxBackground from "@/components/ParallaxBG/ParallaxBG";
 
 export const metadata: Metadata = {
   title: "Sean Cavanaugh for Mayor",
@@ -116,7 +117,16 @@ export default function RootLayout({
             { url: "/recipes", label: "Recipes", icon: <IconReceipt /> },
           ]}
         />
-        <div className="flex flex-col items-center justify-center min-h-screen">
+
+        <ParallaxBackground />
+        <div className="fixed top-0 left-0 w-full h-[25px] bg-blue font-extrabold text-white text-xl text-center tracking-widest">
+          VOTE APRIL 1ST 2025
+        </div>
+
+        <div
+          className="flex flex-col items-center justify-center min-h-screen mx-auto bg-white
+   sm:max-w-xl md:max-w-[900px] lg:max-w-[1000px] xl:max-w-[1300px] 2xl:max-w-[1400px] shadow-lg lg:mt-[150px] mb-24"
+        >
           {children}
         </div>
         <Footer

@@ -1,0 +1,8 @@
+.nextFourYears {
+  height: 5px;
+  width: 5px;
+  justify-self: center;
+  align-self: center;
+  background-color: gray;
+  border-radius: 50%;
+}

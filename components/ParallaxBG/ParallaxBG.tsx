@@ -1,30 +1,18 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useEffect, useRef } from "react";
 
-export type TParallaxBackground = ({
-  imageUrl,
-  cssOverrides,
-}: {
-  imageUrl: string;
-  cssOverrides?: React.CSSProperties;
-}) => JSX.Element;
-
-const ParallaxBackground: TParallaxBackground = ({
-  imageUrl,
-  cssOverrides,
-}) => {
-  const [scrollY, setScrollY] = useState(0);
-  const [imageHeight, setImageHeight] = useState(0);
+const ParallaxBackground = () => {
+  const backgroundRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      if (backgroundRef.current) {
+        const yOffset = window.scrollY * 0.1;
+        backgroundRef.current.style.backgroundPosition = `center ${yOffset}px`;
+      }
     };
 
-    // Set initial height of the image (larger than viewport height)
-    setImageHeight(window.innerHeight * 1.5); // 1.5x the viewport height
-
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -33,14 +21,16 @@ const ParallaxBackground: TParallaxBackground = ({
 
   return (
     <div
-      className="fixed top-0 left-0 w-full z-[-1] transition-all ease-out duration-300"
+      ref={backgroundRef}
+      className="fixed top-0 left-0 w-full z-[-1]"
       style={{
-        backgroundImage: `url(${imageUrl})`,
+        backgroundImage:
+          "linear-gradient(30deg, #972520 25%, #262C3C 25% 50%, #972520 50% 75%, #262C3C 75%)",
         backgroundAttachment: "fixed",
-        backgroundPosition: `center ${-scrollY * 0.3}px`,
-        backgroundRepeat: "no-repeat",
-        height: `${imageHeight}px`, // Set image height to be larger than the viewport
-        ...cssOverrides,
+        backgroundRepeat: "repeat",
+        height: "150vh", // Ensures enough coverage
+        opacity: 0.5,
+        filter: "brightness(0.5)",
       }}
     />
   );
