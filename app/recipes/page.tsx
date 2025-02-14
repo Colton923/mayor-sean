@@ -6,6 +6,8 @@ import { CardTitle } from "@/components/ui/CardTitle/CardTitle";
 import TRecipe from "@/types/TRecipe";
 import { type SanityDocument } from "next-sanity";
 import { client } from "@/sanity/client";
+import urlFor from "@/sanity/urlFor";
+import Image from "next/image";
 
 interface RecipesPageProps {
   recipes: TRecipe[];
@@ -29,6 +31,7 @@ interface RecipesPageProps {
 const RECIPES_QUERY = `
 *[_type == "recipe"] {
   title,
+  images,
 }
 `;
 
@@ -62,6 +65,14 @@ export default async function IndexPage() {
     <div className="justify-self-center w-full max-w-3xl mx-auto mt-32">
       {recipes.map((recipe) => (
         <Card key={recipe.title} className="mb-4">
+          {recipe.images[0] && (
+            <Image
+              src={urlFor(recipe.images[0]).width(200).url() || ""}
+              className="w-full h-auto"
+              fill
+              alt={recipe.title}
+            />
+          )}
           <CardHeader>
             <CardTitle className="text-2xl md:text-3xl">
               {recipe.title}
