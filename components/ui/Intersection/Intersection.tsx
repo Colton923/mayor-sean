@@ -7,7 +7,7 @@ const Intersection = ({
   classNames,
 }: {
   children: React.ReactNode;
-  classNames: string;
+  classNames?: string;
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef<HTMLDivElement | null>(null);

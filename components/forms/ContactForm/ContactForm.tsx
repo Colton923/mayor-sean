@@ -99,8 +99,6 @@ const ContactForm: TContactForm = (t) => {
     setValue("phone", formatted);
   };
 
-  const FadeInSubmittedOverlay = Intersection(SubmittedOverlay);
-
   const Form = () => {
     return (
       <form
@@ -277,7 +275,17 @@ const ContactForm: TContactForm = (t) => {
       </form>
     );
   };
-  return <>{submitted ? <FadeInSubmittedOverlay /> : <Form />}</>;
+  return (
+    <>
+      {submitted ? (
+        <Intersection>
+          <SubmittedOverlay />
+        </Intersection>
+      ) : (
+        <Form />
+      )}
+    </>
+  );
 };
 
 export default ContactForm;
