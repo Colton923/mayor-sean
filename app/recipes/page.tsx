@@ -44,62 +44,69 @@ export default async function IndexPage() {
     {},
     options
   );
-  console.log(recipes);
   if (!recipes || recipes.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center mt-20">
-        <Card className="w-full max-w-3xl mx-auto">
-          <CardHeader>
-            <CardTitle className="text-2xl md:text-3xl">
-              No Recipes Found
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p>Sorry, no recipes are available at the moment.</p>
-          </CardContent>
-        </Card>
+      <div className="flex flex-col items-center justify-center min-h-screen mx-auto bg-white max-w-full sm:max-w-[700px] lg:max-w-[1050px] shadow-lg mb-20 md:my-40 lg:my-48">
+        <div className="flex flex-col items-center justify-center mt-20">
+          <Card className="w-full max-w-3xl mx-auto">
+            <CardHeader>
+              <CardTitle className="text-2xl md:text-3xl">
+                No Recipes Found
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>Sorry, no recipes are available at the moment.</p>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col items-center justify-center my-20 px-4">
-      <CardTitle className="text-2xl md:text-3xl lg:text-4xl text-center">
-        Sean's Recipes
-      </CardTitle>
-      {recipes.map((recipe, index) => (
-        <Intersection key={index} classNames="flex w-full justify-center">
-          <Link
-            href={`/recipes/${recipe.title.toLowerCase().replace(/\s+/g, "-")}`}
-            className="flex w-full justify-center"
-          >
-            <Card
-              key={recipe.title}
-              className="mb-4 flex flex-row h-[100px] overflow-hidden justify-between w-full hover:shadow-lg"
+    <div className="flex flex-col items-center justify-center min-h-screen mx-auto bg-white max-w-full sm:max-w-[700px] lg:max-w-[1050px] shadow-lg mb-20 md:my-40 lg:my-48">
+      <div className="flex flex-col items-center justify-center my-20 px-4">
+        <CardTitle className="text-2xl md:text-3xl lg:text-4xl text-center">
+          Sean's Recipes
+        </CardTitle>
+        {recipes.map((recipe, index) => (
+          <Intersection key={index} classNames="flex w-full justify-center">
+            <Link
+              href={`/recipes/${recipe.title
+                .toLowerCase()
+                .replace(/\s+/g, "-")}`}
+              className="flex w-full justify-center"
             >
-              <div className="w-[200px] justify-start">
-                {recipe.images[0] && (
-                  <Image
-                    src={urlFor(recipe.images[0]).width(200).url() || ""}
-                    height={200}
-                    width={150}
-                    className="object-cover h-full"
-                    alt={recipe.title}
-                  />
-                )}
-              </div>
-              <div className="w-full">
-                <CardHeader>
-                  <CardTitle className="text-md md:text-lg lg:text-xl">
-                    {recipe.title}
-                  </CardTitle>
-                  <p className="text-muted-foreground">{recipe.description}</p>
-                </CardHeader>
-              </div>
-            </Card>
-          </Link>
-        </Intersection>
-      ))}
+              <Card
+                key={recipe.title}
+                className="mb-4 flex flex-row h-[100px] overflow-hidden justify-between w-full hover:shadow-lg"
+              >
+                <div className="w-[200px] justify-start">
+                  {recipe.images[0] && (
+                    <Image
+                      src={urlFor(recipe.images[0]).width(200).url() || ""}
+                      height={200}
+                      width={150}
+                      className="object-cover h-full"
+                      alt={recipe.title}
+                    />
+                  )}
+                </div>
+                <div className="w-full">
+                  <CardHeader>
+                    <CardTitle className="text-md md:text-lg lg:text-xl">
+                      {recipe.title}
+                    </CardTitle>
+                    <p className="text-muted-foreground">
+                      {recipe.description}
+                    </p>
+                  </CardHeader>
+                </div>
+              </Card>
+            </Link>
+          </Intersection>
+        ))}
+      </div>
     </div>
   );
 }
