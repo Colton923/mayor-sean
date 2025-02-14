@@ -123,10 +123,7 @@ export default function RootLayout({
           VOTE APRIL 1ST 2025
         </div>
 
-        <div
-          className="flex flex-col items-center justify-center min-h-screen mx-auto bg-white
-   sm:max-w-xl md:max-w-[900px] lg:max-w-[1000px] xl:max-w-[1300px] 2xl:max-w-[1400px] shadow-lg lg:mt-[150px] mb-24"
-        >
+        <div className="flex flex-col items-center justify-center min-h-screen mx-auto bg-white max-w-[350px] sm:max-w-[400px] md:max-w-[850px] shadow-lg lg:mt-[150px] mb-24">
           {children}
         </div>
         <Footer

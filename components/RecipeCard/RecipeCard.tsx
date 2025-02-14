@@ -5,16 +5,13 @@ import { CardHeader } from "@/components/ui/CardHeader/CardHeader";
 import { CardTitle } from "@/components/ui/CardTitle/CardTitle";
 import TRecipe from "../../types/TRecipe";
 import urlFor from "@/sanity/urlFor";
+import Image from "next/image";
 
 export default function RecipeCard({ recipe }: { recipe?: TRecipe }) {
   if (!recipe) {
     return (
       <Card className="w-full max-w-3xl mx-auto">
-        <CardHeader>
-          <CardTitle className="text-2xl md:text-3xl">
-            Recipe Not Found
-          </CardTitle>
-        </CardHeader>
+        <CardTitle className="text-2xl md:text-3xl">Recipe Not Found</CardTitle>
         <CardContent>
           <p>Sorry, the recipe you're looking for is not available.</p>
         </CardContent>
@@ -23,7 +20,7 @@ export default function RecipeCard({ recipe }: { recipe?: TRecipe }) {
   }
 
   return (
-    <Card className="w-full max-w-3xl mx-auto">
+    <Card className="w-full max-w-3xl mx-auto px-4">
       <CardHeader>
         <CardTitle className="text-2xl md:text-3xl">{recipe.title}</CardTitle>
         <p className="text-muted-foreground">{recipe.description}</p>
@@ -79,10 +76,13 @@ export default function RecipeCard({ recipe }: { recipe?: TRecipe }) {
       {/* pictures */}
       <div className="flex flex-wrap justify-center items-center w-full">
         {recipe.images?.map((image, index) => (
-          <img
-            key={index}
+          <Image
             src={urlFor(image).width(200).url() || ""}
+            height={200}
+            width={150}
             className="w-1/2 md:w-1/3 lg:w-1/4 h-auto p-2"
+            alt={recipe.title}
+            key={index}
           />
         ))}
       </div>
