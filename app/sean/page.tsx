@@ -2,7 +2,14 @@ import Image from "next/image";
 
 export default function Sean() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen mx-auto bg-white max-w-full sm:max-w-[700px] lg:max-w-[1050px] shadow-lg mb-20 md:my-40 lg:my-48">
+    <div
+      className={`flex flex-col items-center justify-center 
+      min-h-screen 
+      mx-auto bg-white 
+      max-w-full 
+      sm:max-w-[700px] 
+      shadow-lg mb-20 md:my-40 lg:my-48`}
+    >
       <div className="min-h-screen w-full flex flex-col items-center my-20 md:my-4">
         <Image
           src="https://firebasestorage.googleapis.com/v0/b/mayor-sean.firebasestorage.app/o/sean-campaign-photos%2FIMG_20141101_211030462_TOP.webp?alt=media&token=d25e16f1-7c74-4f9d-a5df-fa9faf4b39ea"

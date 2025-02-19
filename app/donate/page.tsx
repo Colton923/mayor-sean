@@ -1,7 +1,13 @@
 export default function Page() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen mx-auto bg-white max-w-full sm:max-w-[700px] lg:max-w-[1050px] shadow-lg mb-20 md:my-40 lg:my-48">
-      <div className="flex flex-col items-center justify-center text-center">
+    <div
+      className={`flex flex-col items-center
+      mx-auto bg-white 
+      max-w-full 
+      sm:max-w-[700px] 
+      shadow-lg mb-20 md:my-40 lg:my-48`}
+    >
+      <div className="flex flex-col items-center justify-center text-center p-4">
         <p className="mb-4 text-lg max-w-prose">
           Thank you for supporting the Friends of Sean Cavanaugh. If you prefer
           to send your donation via check, money order, or cashier's check,

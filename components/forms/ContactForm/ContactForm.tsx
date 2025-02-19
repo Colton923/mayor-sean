@@ -103,10 +103,10 @@ const ContactForm: TContactForm = (t) => {
     return (
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className={`space-y-1 block ${styles["fixed-form"]} p-4 shadow-sm bg-blue max-w-2xl mx-auto`}
+        className={`space-y-1 block p-4 shadow-sm max-w-2xl m-auto mt-20 md:mt-0`}
       >
         <div className="text-center">
-          <h1 className="text-2xl text-white underline">
+          <h1 className="text-2xl  underline">
             {contactFormType === "contact"
               ? " Join our Supporters"
               : contactFormType === "yardSigns"
@@ -114,17 +114,17 @@ const ContactForm: TContactForm = (t) => {
               : "Join our Supporters"}
           </h1>
         </div>
-        <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4">
+        <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4 my-4">
           {/* firstName Field */}
           <div className="space-y-2">
             {errors.firstName ? (
               <span
-                className={`text-red text-sm font-extrabold [text-shadow:_0px_0px_30px_white_] ${styles["error-message"]}`}
+                className={`text-red text-[8px] uppercase font-extrabold [text-shadow:_0px_0px_30px_white_] ${styles["error-message"]}`}
               >
-                {errors.firstName.message}
+                * {errors.firstName.message}
               </span>
             ) : (
-              <Label c={"white"} htmlFor="firstName">
+              <Label c={"black"} htmlFor="firstName">
                 First Name
               </Label>
             )}
@@ -145,12 +145,12 @@ const ContactForm: TContactForm = (t) => {
           <div className="space-y-2">
             {errors.lastName ? (
               <span
-                className={`text-red text-sm font-extrabold [text-shadow:_0px_0px_30px_white_] ${styles["error-message"]}`}
+                className={`text-red text-[8px] uppercase font-extrabold [text-shadow:_0px_0px_30px_white_] ${styles["error-message"]}`}
               >
-                {errors.lastName.message}
+                * {errors.lastName.message}
               </span>
             ) : (
-              <Label c={"white"} htmlFor="name">
+              <Label c={"black"} htmlFor="name">
                 Last Name
               </Label>
             )}
@@ -172,12 +172,12 @@ const ContactForm: TContactForm = (t) => {
           <div className="space-y-2 w-full">
             {errors.email ? (
               <span
-                className={`text-red text-sm font-extrabold [text-shadow:_0px_0px_30px_white_] ${styles["error-message"]}`}
+                className={`text-red text-[8px] uppercase font-extrabold [text-shadow:_0px_0px_30px_white_] ${styles["error-message"]}`}
               >
-                {errors.email.message}
+                * {errors.email.message}
               </span>
             ) : (
-              <Label c={"white"} htmlFor="email">
+              <Label c={"black"} htmlFor="email">
                 Email
               </Label>
             )}
@@ -197,17 +197,17 @@ const ContactForm: TContactForm = (t) => {
           </div>
         </div>
 
-        <div className="flex flex-col justify-start space-y-4 md:space-y-0 md:flex-row md:space-x-4">
+        <div className="flex flex-col justify-start space-y-4 md:space-y-0 md:flex-row md:space-x-4 mb-4">
           {/* Phone Field */}
           <div className="space-y-2  min-w-[150px]">
             {errors.phone ? (
               <span
-                className={`text-red text-sm font-extrabold [text-shadow:_0px_0px_30px_white_] ${styles["error-message"]}`}
+                className={`text-red text-[8px] uppercase font-extrabold [text-shadow:_0px_0px_30px_white_] ${styles["error-message"]}`}
               >
-                {errors.phone.message}
+                * {errors.phone.message}
               </span>
             ) : (
-              <Label c={"white"} htmlFor="phone">
+              <Label c={"black"} htmlFor="phone">
                 Phone
               </Label>
             )}
@@ -230,12 +230,12 @@ const ContactForm: TContactForm = (t) => {
           <div className="space-y-2 w-full">
             {errors.mailingAddress ? (
               <span
-                className={`text-red text-sm font-extrabold [text-shadow:_0px_0px_30px_white_] ${styles["error-message"]}`}
+                className={`text-red text-[8px] uppercase font-extrabold [text-shadow:_0px_0px_30px_white_] ${styles["error-message"]}`}
               >
-                {errors.mailingAddress.message}
+                * {errors.mailingAddress.message}
               </span>
             ) : (
-              <Label c={"white"} htmlFor="mailingAddress">
+              <Label c={"black"} htmlFor="mailingAddress">
                 Mailing Address
               </Label>
             )}
@@ -249,11 +249,26 @@ const ContactForm: TContactForm = (t) => {
                 },
               })}
             />
+          </div>
+          {/* Message Field */}
+          <div className="space-y-2 w-full">
+            {errors.message ? (
+              <span
+                className={`text-red text-[8px] uppercase font-extrabold [text-shadow:_0px_0px_30px_white_] ${styles["error-message"]}`}
+              >
+                * {errors.message.message}
+              </span>
+            ) : (
+              <Label c={"black"} htmlFor="message">
+                Message
+              </Label>
+            )}
             <Textarea id="message" {...register("message", {})} />
           </div>
+
           <input
             type="submit"
-            className="cursor-pointer bg-red text-white font-bold text-lg rounded-md hover:bg-opacity-80 px-1"
+            className="cursor-pointer bg-red  font-bold text-lg rounded-md hover:bg-opacity-80 px-1"
             value="Submit"
             width={100}
             style={{
@@ -262,13 +277,13 @@ const ContactForm: TContactForm = (t) => {
             }}
           />
         </div>
-        <div className="text-sm text-muted-foreground mt-4 text-white">
+        <div className="text-sm text-muted-foreground mt-4 ">
           By submitting this form, you agree to our{" "}
-          <a href="/privacy-policy" className="underline text-white">
+          <a href="/privacy-policy" className="underline ">
             Privacy Policy
           </a>{" "}
           and{" "}
-          <a href="/terms-of-service" className="underline text-white">
+          <a href="/terms-of-service" className="underline ">
             Terms of Service
           </a>
         </div>
