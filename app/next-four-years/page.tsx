@@ -1,4 +1,4 @@
-import styles from "./TheNextFourYearsPage.module.css";
+import { SeanHeader } from "@/components/SeanHeader/SeanHeader";
 
 const SpeechSection = ({
   title,
@@ -34,18 +34,6 @@ const KeyPoint = ({ point }: { point: string }) => (
     <p>{point}</p>
   </div>
 );
-
-export const SeanHeader = () => {
-  return (
-    <div className="flex flex-row items-center justify-center space-x-4">
-      <p className="text-sm text-center text-gray italic">Sean Cavanaugh</p>
-      <div className={styles.nextFourYears} />
-      <p className="text-sm text-center text-gray italic">
-        The Change Monmouth Needs
-      </p>
-    </div>
-  );
-};
 
 export default function TheNextFourYearsPage() {
   return (

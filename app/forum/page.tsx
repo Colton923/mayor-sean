@@ -1,4 +1,4 @@
-import { SeanHeader } from "app/next-four-years/page";
+import { SeanHeader } from "@/components/SeanHeader/SeanHeader";
 
 export default function ForumPage() {
   return (
