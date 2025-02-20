@@ -101,7 +101,7 @@ const Mobile = ({ MobileIcon, NavbarLinks, bottomedOut }: TMobile) => {
             isMenuOpen
               ? "-translate-y-1/2 scale-100"
               : "translate-y-full scale-0"
-          } w-32 h-32 z-10 flex items-start justify-start flex-col-reverse`}
+          } w-36 h-32 z-10 flex items-start justify-start flex-col-reverse`}
         >
           <Dropdown NavbarLinks={NavbarLinks} toggleMenu={toggleMenu} />
         </div>

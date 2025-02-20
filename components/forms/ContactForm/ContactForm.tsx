@@ -105,15 +105,7 @@ const ContactForm: TContactForm = (t) => {
         onSubmit={handleSubmit(onSubmit)}
         className={`space-y-1 block p-4 shadow-sm max-w-2xl m-auto mt-20 md:mt-0`}
       >
-        <div className="text-center">
-          <h1 className="text-2xl  underline">
-            {contactFormType === "contact"
-              ? " Join our Supporters"
-              : contactFormType === "yardSigns"
-              ? "Request a Yard Sign"
-              : "Join our Supporters"}
-          </h1>
-        </div>
+        <div className="text-lg font-semibold">Send us a message</div>
         <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4 my-4">
           {/* firstName Field */}
           <div className="space-y-2">
@@ -268,7 +260,7 @@ const ContactForm: TContactForm = (t) => {
 
           <input
             type="submit"
-            className="cursor-pointer bg-red  font-bold text-lg rounded-md hover:bg-opacity-80 px-1"
+            className="cursor-pointer hover:bg-primary-dark border border-primary-dark p-1"
             value="Submit"
             width={100}
             style={{
